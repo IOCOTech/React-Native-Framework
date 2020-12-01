@@ -15,6 +15,38 @@ When using this project please make sure you follow the ways of work to ensure a
 git clone https://github.com/IOCOTech/React-Native-Framework.git
 ```
 
+After you have cloned the repo open the android folder in Android Studio and run the following comamand before doing a build.
+```bash
+npm install
+```
+
+Finally startup an emulator and build the project in Android Studio.
+
+(Note) if you are using VS code you can run the following commands in sequence.
+if you are having permission issues refer to the issue section below the commands.
+```bash
+npm install
+```
+```bash
+react-native run-android
+```
+
+## Issues with permission
+
+Here are articles that will help resolve any issues found regarding the setup.
+
+https://stackoverflow.com/questions/60276556/how-can-i-solve-permission-denied-in-react-native-project
+
+https://stackoverflow.com/questions/38835931/react-native-adb-reverse-enoent
+
+## Ways of work
+
+This section will be available soon.
+
+## UI global styles
+
+This section will be available soon.
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
