@@ -47,6 +47,14 @@ This section will be available soon.
 
 This section will be available soon.
 
+## Navigation library
+
+https://reactnavigation.org/docs/getting-started
+
+## Helpfull UI libraries
+
+https://reactnativeelements.com
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
