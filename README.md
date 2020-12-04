@@ -60,24 +60,22 @@ https://stackoverflow.com/questions/38835931/react-native-adb-reverse-enoent
 https://stackoverflow.com/questions/27620262/sdk-location-not-found-define-location-with-sdk-dir-in-the-local-properties-fil
 
 
-## Ways of work
+## Dev Standards
 
-This section will be available soon.
+React Native is an empty box at first so here are guidelines to ensure that all developers working with this repo adhere to the same coding standards. First let's have a look at some helpful libraries that are used for navigation and UI components.
+
+### Navigation library
+
+https://reactnavigation.org/docs/getting-started
+
+### UI component library
+
+https://reactnativeelements.com
 
 
 ## UI global styles
 
 This section will be available soon.
-
-
-## Navigation library
-
-https://reactnavigation.org/docs/getting-started
-
-
-## Helpfull UI libraries
-
-https://reactnativeelements.com
 
 
 ## Contributing
