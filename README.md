@@ -17,12 +17,10 @@ When using this project please make sure you follow the ways of work to ensure a
 git clone https://github.com/IOCOTech/React-Native-Framework.git
 ```
 
-
 After you have cloned the repo open the android folder in Android Studio or (the root folder in VS Code) and run the following command before doing a build => 
 ```bash
 npm install
 ```
-
 
 Android Studio will work right off the bat whereas with VS Code you might need to do some extra permission changes which is worth it because we love VS code. 
 If you want to build for IOS you have to dowload Xcode and run the project from there.
@@ -37,8 +35,6 @@ npm install
 ```bash
 react-native run-android
 ```
-=========================================>
-
 
 ## Issues with permission 🤒
 
@@ -59,9 +55,6 @@ https://stackoverflow.com/questions/38835931/react-native-adb-reverse-enoent
 
 https://stackoverflow.com/questions/27620262/sdk-location-not-found-define-location-with-sdk-dir-in-the-local-properties-fil
 
-=========================================>
-
-
 ## Dev Standards
 
 React Native is an empty box at first so here are guidelines to ensure that all developers working with this repo adhere to the same coding standards. First let's have a look at some helpful libraries that are used for navigation and UI components.
@@ -74,18 +67,9 @@ https://reactnavigation.org/docs/getting-started
 
 https://reactnativeelements.com
 
-=========================================>
-
-
-
 ## UI global styles
 
 This section will be available soon.
-
-=========================================>
-
-
-
 
 ## Contributing
 
