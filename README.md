@@ -4,7 +4,7 @@ This repo is a great way to get started with a React Native project. React Nativ
 
 When using this project please make sure you follow the ways of work to ensure all derivative projects are aligned.
 
-
+<hr/>
 ## Installation 🛠
 
 1)  Ensure that you have node.js installed before starting => 
