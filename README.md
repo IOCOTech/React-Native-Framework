@@ -43,9 +43,14 @@ Here are some articles that will help resolve any issues found regarding the set
 
 Note: the best way to resolve issues is sometimes to Google them.
 
+1) Permissions 
 https://stackoverflow.com/questions/60276556/how-can-i-solve-permission-denied-in-react-native-project
 
+2) Emulator
 https://stackoverflow.com/questions/38835931/react-native-adb-reverse-enoent
+
+3) ANDROID_SDK_ROOT
+https://stackoverflow.com/questions/27620262/sdk-location-not-found-define-location-with-sdk-dir-in-the-local-properties-fil
 
 ## Ways of work
 
