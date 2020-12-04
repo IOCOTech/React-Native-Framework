@@ -4,6 +4,7 @@ This repo is a great way to get started with a React Native project. React Nativ
 
 When using this project please make sure you follow the ways of work to ensure all derivative projects are aligned.
 
+
 ## Installation 🛠
 
 1)  Ensure that you have node.js installed before starting => 
@@ -17,10 +18,12 @@ When using this project please make sure you follow the ways of work to ensure a
 git clone https://github.com/IOCOTech/React-Native-Framework.git
 ```
 
+
 After you have cloned the repo open the android folder in Android Studio or (the root folder in VS Code) and run the following command before doing a build => 
 ```bash
 npm install
 ```
+
 
 Android Studio will work right off the bat whereas with VS Code you might need to do some extra permission changes which is worth it because we love VS code. 
 If you want to build for IOS you have to dowload Xcode and run the project from there.
@@ -35,6 +38,7 @@ npm install
 ```bash
 react-native run-android
 ```
+
 
 ## Issues with permission 🤒
 
@@ -55,27 +59,32 @@ https://stackoverflow.com/questions/38835931/react-native-adb-reverse-enoent
 
 https://stackoverflow.com/questions/27620262/sdk-location-not-found-define-location-with-sdk-dir-in-the-local-properties-fil
 
+
 ## Ways of work
 
 This section will be available soon.
+
 
 ## UI global styles
 
 This section will be available soon.
 
+
 ## Navigation library
 
 https://reactnavigation.org/docs/getting-started
+
 
 ## Helpfull UI libraries
 
 https://reactnativeelements.com
 
+
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Contributing to this documentation is always appreciated so if you found something useful to add, create a pull request for the readme file.
+Code pull requests are welcome for major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
 
 ## Questions and Answers
 
