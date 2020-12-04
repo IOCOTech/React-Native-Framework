@@ -12,17 +12,17 @@ When using this project please make sure you follow the ways of work to ensure a
 2)  Then follow the React Native CLI setup (Choose React Native CLI Quickstart and NOT EXPO CLI Quickstart) => 
     https://reactnative.dev/docs/environment-setup
 
-3)  Once you have the React Native CLI installed you are ready to rock so in a new project folder run the following command to clone this repo => 
+3)  Once you have the React Native CLI installed you are ready to rock it, so in a new project folder run the following command to clone this repo => 
 ```bash
 git clone https://github.com/IOCOTech/React-Native-Framework.git
 ```
 
-After you have cloned the repo open the android folder in Android Studio or (VS Code) and run the following comamand before doing a build => 
+After you have cloned the repo open the android folder in Android Studio or (the root folder in VS Code) and run the following command before doing a build => 
 ```bash
 npm install
 ```
 
-Android Studio will work right of the bat where as with VS Code you might need to do some extra permission changes which is worth it because we all love VS code. 
+Android Studio will work right off the bat whereas with VS Code you might need to do some extra permission changes which is worth it because we love VS code. 
 If you want to build for IOS you have to dowload Xcode and run the project from there.
 
 Finally startup an emulator and build the project in Android Studio.
@@ -38,7 +38,10 @@ react-native run-android
 
 ## Issues with permission 🤒
 
-Here are articles that will help resolve any issues found regarding the setup.
+Sometimes things don't always work out according to plan, oops!
+Here are some articles that will help resolve any issues found regarding the setup.
+
+Note: the best way to resolve issues is sometimes to Google them.
 
 https://stackoverflow.com/questions/60276556/how-can-i-solve-permission-denied-in-react-native-project
 
