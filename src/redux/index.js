@@ -1,5 +1,5 @@
-import { newStateAction } from "./newState/newStateActions";
-
+import { add, remove } from "./counter/counterActions";
 export {
-    newStateAction, 
+    add, 
+    remove
 }

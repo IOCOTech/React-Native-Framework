@@ -32,9 +32,9 @@ const platform = Platform.OS;
 //  -----------------------------------------------
 const Palette = {
   // App colors
-  appPrimary: "#0f6987",
+  appPrimary: "#0B3040",
   appSecondaryDark: "#222222",
-  appSecondary: "#333333",
+  appSecondary: "#FFB340",
   appSecondaryLight: "#666666",
   appSecondaryMidLight: "#dddddd",
   appSecondaryVeryLight: "#eeeeee",
@@ -45,19 +45,19 @@ const Palette = {
   appAlert: "#be1e50",
 
   // Icon colors
-  iconPrimary: "#0f6987",
-  iconSecondary: "#333333",
+  iconPrimary: "#0B3040",
+  iconSecondary: "#FFB340",
   iconAccent: "#ffcc00",
   iconAlert: "#be1e50",
   iconWhite: "#ffffff",
 
   // Loader
-  loaderPrimary: "#333333",
+  loaderPrimary: "#0B3040",
 
   // Text
-  textPrimary: "#0f6987",
+  textPrimary: "#0B3040",
   textSecondaryDark: "#222222",
-  textSecondary: "#333333",
+  textSecondary: "#FFB340",
   textSecondaryLight: "#666666",
   textAccent: "#ffcc00",
   textAlert: "#be1e50",
@@ -124,9 +124,10 @@ const TextSize = {
 //  5. Font
 //  -----------------------------------------------
 const Font = {
-  regular: "fontRegular",
-  medium: "fontMedium",
-  bold: "fontBold"
+  regular: "Roboto-Regular",
+  medium: "Roboto-Medium",
+  thin: "Roboto-Thin",
+  bold: "Roboto-Bold"
 };
 
 //  6. IconSize
@@ -164,14 +165,13 @@ const IsPlatform = {
 //  10. SafeArea
 //  -----------------------------------------------
 const SafeArea = {
-  // safeArea: Platform.select({ ios: 0, android: StatusBar.currentHeight })
   safeArea: Platform.select({ ios: 0, android: 0 })
 };
 
 //  11. ImageUrl
 //  -----------------------------------------------
 const ImageUrl = {
-  // cdi_intro: require("../assets/brand/cdi/CDi_Intro.png"),
+  ioco_logo: require("../assets/images/ioco-logo.png"),
 };
 
 export {

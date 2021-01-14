@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
-import { newStateReducer } from './newState/newStateReducer';
+import counterReducer from './counter/counterReducer';
 
 export default combineReducers({
-    newState: newStateReducer,
+    counter: counterReducer,
   });

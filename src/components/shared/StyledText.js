@@ -43,6 +43,7 @@ const StyledText = props => {
       props.primary ? { color: G.Palette.textPrimary } : null,
       props.bold ? { fontFamily: G.Font.bold } : null,
       props.medium ? { fontFamily: G.Font.medium } : null,
+      props.thin ? { fontFamily: G.Font.thin } : null,
       props.regular ? { fontFamily: G.Font.regular } : null,
       props.center ? { textAlign: "center" } : null,
       props.right ? { textAlign: "right" } : null,

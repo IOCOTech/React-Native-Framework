@@ -6,7 +6,7 @@ import G from "../../../styles/import_globals";
 // Shared Component imports
 import StyledText from "./StyledText";
 
-const ButtonPrimary = ({ 
+const Button = ({ 
   loading, 
   forColumn,
   testID, 
@@ -52,9 +52,9 @@ const ButtonPrimary = ({
 const styles = StyleSheet.create({
   buttonPrimary: {
     backgroundColor: G.Palette.appAccent,
-    borderRadius: G.RadiusSize.r100,
+    borderRadius: G.RadiusSize.r10,
     flex: 1,
-    height: 48,
+    height: 35,
     justifyContent: "center",
     alignItems: "center",
     paddingHorizontal: G.Gutter.g8
@@ -63,9 +63,9 @@ const styles = StyleSheet.create({
     backgroundColor: G.Palette.appWhite,
     borderColor: G.Palette.appPrimary,
     borderWidth: 2,
-    borderRadius: G.RadiusSize.r100,
+    borderRadius: G.RadiusSize.r10,
     flex: 1,
-    height: 48,
+    height: 35,
     justifyContent: "center",
     alignItems: "center",
     paddingHorizontal: G.Gutter.g8
@@ -77,4 +77,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ButtonPrimary;
+export default Button;
