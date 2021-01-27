@@ -1,188 +1,223 @@
 //  ***** Disclaimer *****
-//  This file contains the style stetting :es.
+//  This file contains the style stettings for use in the project.
+//  uses f => factor values that can change but is ussually set on
+//  start of the initial project.
+//  uses c => constant values that can not change but are custom to 
+//  your needs as the project progress 
 //  *********************
 //
 //  Table of Contents:
 //--------------------------------------------------
-//  1. Imports
-//  2. Palette
-//  3. Gutter
-//  4. TextSize
-//  5. Font
-//  6. IconSize
-//  7. RadiusSize
-//  8. DeviceSize
-//  9. Platform
-//  10. SafeArea
-//  11. ImageUrl
+//  1. palettes
+//  2. theme
+//  3. spacing
+//  4. font_size
+//  5. font_discription
+//  6. font_line_height
+//  7. font_weight
+//  8. font_family
+//  9. icon_size
+//  10. border_thickness
+//  11. radius_size
 //  -----------------------------------------------
 
 //  Global style settings
 //  -----------------------------------------------
 
-//  1. Imports
-//  Imports
+//  1. palettes
 //  -----------------------------------------------
-import { Platform, Dimensions } from "react-native";
+const app_pallete = {
+  primary: "#0f6987",
+  secondary: "#333333",
+  accent: "#ffcc00",
+  white: "#ffffff",
+  grey: "#eeeeee",
+  black: "#000000",
+}
 
-const deviceHeight = Dimensions.get("window").height;
-const deviceWidth = Dimensions.get("window").width;
-const platform = Platform.OS;
-//  2. Palette
+const font_pallete = {
+  primary: "#0f6987",
+  secondary: "#333333",
+  accent: "#ffcc00",
+  white: "#ffffff",
+  grey: "#eeeeee",
+  black: "#000000",
+}
+
+const icon_pallete = {
+  primary: "#0f6987",
+  secondary: "#333333",
+  accent: "#ffcc00",
+  white: "#ffffff",
+  grey: "#eeeeee",
+  black: "#000000",
+}
+
+const loader_pallete = {
+  primary: "#0f6987",
+  secondary: "#333333",
+  accent: "#ffcc00",
+  white: "#ffffff",
+  grey: "#eeeeee",
+  black: "#000000",
+}
+
+const snackbar_pallete = {
+  primary: "#0f6987",
+  secondary: "#333333",
+  accent: "#ffcc00",
+  white: "#ffffff",
+  grey: "#eeeeee",
+  black: "#000000",
+}
+
+//  2. theme
 //  -----------------------------------------------
-const Palette = {
-  // App colors
-  appPrimary: "#0B3040",
-  appSecondaryDark: "#222222",
-  appSecondary: "#FFB340",
-  appSecondaryLight: "#666666",
-  appSecondaryMidLight: "#dddddd",
-  appSecondaryVeryLight: "#eeeeee",
-  appSecondaryCdiLight: "#adadad",
-  appAccent: "#ffcc00",
-  appWhite: "#ffffff",
-  appOffWhite: "#f6f6f6",
-  appAlert: "#be1e50",
+const theme = {
+  app: app_pallete,
+  font: font_pallete,
+  icon: icon_pallete,
+  loader: loader_pallete,
+  snackbar: snackbar_pallete,
+}
 
-  // Icon colors
-  iconPrimary: "#0B3040",
-  iconSecondary: "#FFB340",
-  iconAccent: "#ffcc00",
-  iconAlert: "#be1e50",
-  iconWhite: "#ffffff",
-
-  // Loader
-  loaderPrimary: "#0B3040",
-
-  // Text
-  textPrimary: "#0B3040",
-  textSecondaryDark: "#222222",
-  textSecondary: "#FFB340",
-  textSecondaryLight: "#666666",
-  textAccent: "#ffcc00",
-  textAlert: "#be1e50",
-  textWhite: "#ffffff",
-
-  //snackbar
-  snackBarSuccess: "#419182",
-  snackBarInfo: "#0d6583",
-  snackBarWarning: "#be1e50",
-  snackBarNotification: "#dc6428",
+//  3. spacing
+//  -----------------------------------------------
+const spacing = {
+  f0 : 0,
+  f1 : 4,
+  f2 : 8,
+  f3 : 16,
+  f4 : 24,
+  f5 : 32,
+  f6 : 40,
+  f7 : 50,
+  c7: 7,
+  c10: 10
 };
 
-//  3. Gutters
+//  4. font_size
 //  -----------------------------------------------
-
-const Gutter = {
-  g4: 4,
-  g8: 8,
-  g16: 16,
-  g24: 24,
-  g32: 32,
-  g40: 40,
-  g50: 50,
-  g130: 130,
-  g135: 135,
-  g136: 136,
-  g137: 137,
-  g138: 138,
-  g139: 139,
-  g140: 140,
-  g312: 312,
+const font_size = {
+  f0 : 0,
+  f1 : 8,
+  f2 : 9,
+  f3 : 11,
+  f4 : 12,
+  f5 : 13,
+  f6 : 14,
+  f7 : 16,
+  f8 : 24,
+  f9 : 32,
+  f10 : 40,
+  c7: 7,
+  c10: 10
 };
 
-//  4. TextSize
+//  5. font_discription
 //  -----------------------------------------------
-const TextSize = {
-  f8 : 8,
-  f9 : 9,
-  f10 : 10,
-  f11 : 11,
-  f12 : 12,
-  f13 : 13,
-  f14 : 14,
-  f15 : 15,
-  f16 : 16,
-  f17 : 17,
-  f18 : 18,
-  f19 : 19,
-  f20 : 20,
-  f21 : 21,
-  f22 : 22,
-  f23 : 23,
-  f24 : 24,
-  f25 : 25,
-  f26 : 26,
-  f27 : 27,
-  f28 : 28,
-  f29 : 29,
-  f30 : 30,
-  f31 : 31,
-  f32 : 32,
+const font_discription = {
+  hero: font_size.f7,
+  sub_hero: font_size.f6,
+  heading: font_size.f5,
+  sub_heading: font_size.f4,
+  title: font_size.f3,
+  body: font_size.f2,
+  small: font_size.f1,
 };
 
-//  5. Font
+//  6. font_line_height
 //  -----------------------------------------------
-const Font = {
+const font_line_height = {
+  f0 : 0,
+  f1 : 8,
+  f2 : 9,
+  f3 : 11,
+  f4 : 12,
+  f5 : 13,
+  f6 : 14,
+  f7 : 16,
+  f8 : 24,
+  f9 : 32,
+  f10 : 40,
+};
+
+//  7. font_weight
+//  -----------------------------------------------
+const font_weight = {
+  f0 : 0,
+  f1 : 100,
+  f2 : 200,
+  f3 : 300,
+  f4 : 400,
+  f5 : 500,
+  f6 : 600,
+  f7 : 700,
+  f8 : 800,
+  f9 : 900,
+  f10 : 1000,
+};
+
+//  8. font_family
+//  -----------------------------------------------
+const font_family = {
   regular: "Roboto-Regular",
   medium: "Roboto-Medium",
-  thin: "Roboto-Thin",
-  bold: "Roboto-Bold"
+  bold: "Roboto-Bold",
 };
 
-//  6. IconSize
+//  9. icon_size
 //  -----------------------------------------------
-const IconSize = {
-  i16: 16,
-  i24: 24,
-  i60: 60,
+const icon_size = {
+  f0 : 0,
+  f1 : 10,
+  f2 : 20,
+  f3 : 30,
+  f4 : 40,
+  f5 : 50,
+  f6 : 60,
+  f7 : 70,
+  f8 : 80,
+  f9 : 90,
+  f10 : 100,
 };
 
-//  7. RadiusSize
+//  10. border_thickness
 //  -----------------------------------------------
-const RadiusSize = {
-  r5: 5,
-  r10: 10,
-  r20: 20,
-  r40: 40,
-  r100: 100,
-  r200: 200
+const border_thickness = {
+  f0 : 0.0,
+  f1 : 0.5,
+  f2 : 1,
+  f3 : 1.5,
+  f4 : 2,
+  f5 : 2.5,
+  f6 : 3,
+  f7 : 3.5,
+  f8 : 4,
+  f9 : 4.5,
+  f10 : 5,
 };
 
-//  8. Device Size
+//  11. radius_size
 //  -----------------------------------------------
-const DeviceSize = {
-  height: deviceHeight,
-  width: deviceWidth
-};
-
-//  9. Platform
-//  -----------------------------------------------
-const IsPlatform = {
-  ios: platform === "ios" ? true : false
-};
-
-//  10. SafeArea
-//  -----------------------------------------------
-const SafeArea = {
-  safeArea: Platform.select({ ios: 0, android: 0 })
-};
-
-//  11. ImageUrl
-//  -----------------------------------------------
-const ImageUrl = {
-  ioco_logo: require("../assets/images/ioco-logo.png"),
+const radius_size = {
+  f0 : 0,
+  f1 : 2,
+  f2 : 6,
+  f3 : 8,
+  f4 : 10,
+  f5 : 15,
 };
 
 export {
-  Palette,
-  Gutter,
-  TextSize,
-  Font,
-  IconSize,
-  RadiusSize,
-  DeviceSize,
-  IsPlatform,
-  SafeArea,
-  ImageUrl
+  theme,
+  spacing,
+  font_size,
+  font_discription,
+  font_line_height,
+  font_weight,
+  font_family,
+  icon_size,
+  border_thickness,
+  radius_size
 };

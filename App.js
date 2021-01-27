@@ -28,19 +28,19 @@ const App = ({add, remove, counter}) => {
       {/* Sets the content below the statusbar */}
       <SafeAreaView style={styles.safeArea}>
         {/* Custom component similar to a View but with props for styling */}
-        <Container padding={G.Gutter.g24}>
+        <Container padding={G.spacing.f4}>
           {/* Ioco logo */}
           <Image 
-            source={G.ImageUrl.ioco_logo}
+            source={G.image_urls.ioco_logo}
             style={styles.logoStyles} />
           {/* Custom component to create a space */}
           <Spacer meduim/>
           {/* Custom component to style text */}
-          <StyledText bold f18 primary>Welcome to React Native ways of work framework.</StyledText>
+          <StyledText bold f8 secondary>Welcome to React Native ways of work framework.</StyledText>
           <Spacer meduim/>
-          <StyledText regular f16 primary>This is a demo page that you can remove once you begin your project.</StyledText>
+          <StyledText regular f7 secondary>This is a demo page that you can remove once you begin your project.</StyledText>
           <Spacer small/>
-          <StyledText regular f16 primary>
+          <StyledText regular f7 secondary>
             The project contains folder structures, redux, style guides and a few components to get you started.
             Below is and example of a button working with Redux state managment.
           </StyledText>
@@ -49,7 +49,7 @@ const App = ({add, remove, counter}) => {
             {/* Custom component that acts like a button */}
             <Button action={() => add()} title={"Add"}></Button>
             <Spacer meduim/>
-            <StyledText bold f25 primary>{counter.count}</StyledText>
+            <StyledText bold f9 primary>{counter.count}</StyledText>
             <Spacer meduim/>
             <Button action={() => remove()} title={"Remove"}></Button>
           </Container>
@@ -63,7 +63,7 @@ const App = ({add, remove, counter}) => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    paddingTop: G.Gutter.g24
+    paddingTop: G.spacing.f4
   },
   logoStyles: {
     height: 30,

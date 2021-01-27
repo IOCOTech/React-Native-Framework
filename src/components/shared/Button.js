@@ -22,8 +22,8 @@ const Button = ({
     // Component start
     loading ? 
       <View style={[styles.container, forColumn ? {flex: 0} : null, {...loadingOuterContainerStyle}]}>
-        <View style={[secondary ? styles.buttonSecondary : styles.buttonPrimary, {opacity: 0.6}, {...loadingButtonStyle}, disabled ? { backgroundColor: G.Palette.appSecondaryMidLight } : null]}>
-          <ActivityIndicator size="large" color={G.Palette.loaderPrimary} />
+        <View style={[secondary ? styles.buttonSecondary : styles.buttonPrimary, {opacity: 0.6}, {...loadingButtonStyle}, disabled ? { backgroundColor: G.theme.loader.primary } : null]}>
+          <ActivityIndicator size="large" color={G.theme.loader.primary} />
         </View>
       </View>
       :
@@ -38,8 +38,8 @@ const Button = ({
           action();
         }}
       >
-    <View style={[secondary ? styles.buttonSecondary : styles.buttonPrimary, {...buttonStyle}, disabled ? { backgroundColor: G.Palette.appSecondaryMidLight, borderWidth: 0 } : null]}>
-      <StyledText f12 primary bold>
+    <View style={[secondary ? styles.buttonSecondary : styles.buttonPrimary, {...buttonStyle}, disabled ? { backgroundColor: G.theme.app.grey, borderWidth: 0 } : null]}>
+      <StyledText f6 secondary bold>
         {title.toUpperCase()}
       </StyledText>
     </View>
@@ -51,24 +51,24 @@ const Button = ({
 // custom styles for this element
 const styles = StyleSheet.create({
   buttonPrimary: {
-    backgroundColor: G.Palette.appAccent,
-    borderRadius: G.RadiusSize.r10,
+    backgroundColor: G.theme.app.accent,
+    borderRadius: G.radius_size.f5,
     flex: 1,
     height: 35,
     justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: G.Gutter.g8
+    paddingHorizontal: G.spacing.f2
   },
   buttonSecondary: {
-    backgroundColor: G.Palette.appWhite,
-    borderColor: G.Palette.appPrimary,
+    backgroundColor: G.theme.app.white,
+    borderColor: G.theme.app.primary,
     borderWidth: 2,
-    borderRadius: G.RadiusSize.r10,
+    borderRadius: G.radius_size.f5,
     flex: 1,
     height: 35,
     justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: G.Gutter.g8
+    paddingHorizontal: G.spacing.f2
   },
   container: {
     flex: 1,

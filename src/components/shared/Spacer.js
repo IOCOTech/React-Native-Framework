@@ -7,29 +7,29 @@ import G from "../../../styles/import_globals";
 
 const Spacer = props => {
   // Local functions
-  let space = G.Gutter.g24;
+  let space = G.spacing.f4;
 
   // Local conditionals
   if (props.xxsmall) {
-    space = G.Gutter.g4;
+    space = G.spacing.f1;
   }
   if (props.xsmall) {
-    space = G.Gutter.g8;
+    space = G.spacing.f2;
   }
   if (props.small) {
-    space = G.Gutter.g16;
+    space = G.spacing.f3;
   }
   if (props.medium) {
-    space = G.Gutter.g24;
+    space = G.spacing.f4;
   }
   if (props.large) {
-    space = G.Gutter.g32;
+    space = G.spacing.f5;
   }
   if (props.xlarge) {
-    space = G.Gutter.g40;
+    space = G.spacing.f6;
   }
   if (props.xxlarge) {
-    space = G.Gutter.g50;
+    space = G.spacing.f7;
   }
 
   return (
