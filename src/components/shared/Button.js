@@ -39,7 +39,7 @@ const Button = ({
         }}
       >
     <View style={[secondary ? styles.buttonSecondary : styles.buttonPrimary, {...buttonStyle}, disabled ? { backgroundColor: G.theme.app.grey, borderWidth: 0 } : null]}>
-      <StyledText f6 secondary bold>
+      <StyledText f4 secondary bold>
         {title.toUpperCase()}
       </StyledText>
     </View>

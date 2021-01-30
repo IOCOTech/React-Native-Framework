@@ -74,7 +74,7 @@ const snackbar_pallete = {
 //  2. theme
 //  -----------------------------------------------
 const theme = {
-  app: app_pallete,
+  app: app_pallete ,
   font: font_pallete,
   icon: icon_pallete,
   loader: loader_pallete,
@@ -92,7 +92,7 @@ const spacing = {
   f5 : 32,
   f6 : 40,
   f7 : 50,
-  c7: 7,
+  c3: 3,
   c10: 10
 };
 
@@ -101,17 +101,15 @@ const spacing = {
 const font_size = {
   f0 : 0,
   f1 : 8,
-  f2 : 9,
-  f3 : 11,
-  f4 : 12,
-  f5 : 13,
-  f6 : 14,
-  f7 : 16,
+  f2 : 10,
+  f3 : 12,
+  f4 : 14,
+  f5 : 16,
+  f6 : 18,
+  f7 : 20,
   f8 : 24,
   f9 : 32,
   f10 : 40,
-  c7: 7,
-  c10: 10
 };
 
 //  5. font_discription
@@ -164,6 +162,7 @@ const font_family = {
   regular: "Roboto-Regular",
   medium: "Roboto-Medium",
   bold: "Roboto-Bold",
+  thin: "Roboto-Thin",
 };
 
 //  9. icon_size

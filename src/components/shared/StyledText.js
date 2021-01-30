@@ -27,6 +27,7 @@ const StyledText = props => {
       props.bold ? { fontFamily: G.font_family.bold } : null,
       props.medium ? { fontFamily: G.font_family.medium } : null,
       props.regular ? { fontFamily: G.font_family.regular } : null,
+      props.thin ? { fontFamily: G.font_family.thin } : null,
       props.center ? { textAlign: "center" } : null,
       props.right ? { textAlign: "right" } : null,
       props.italic ? { fontStyle: "italic" } : null,
