@@ -8,23 +8,16 @@ import StyledText from "./StyledText";
 
 const Button = ({ 
   loading, 
-  forColumn,
   testID, 
   title, 
   action=() => {}, 
-  outerContainerStyle, 
-  loadingOuterContainerStyle,
   buttonStyle, 
-  loadingButtonStyle,
-  secondary,
   disabled }) => {
   return (
     // Component start
     loading ? 
-      <View style={[styles.container, forColumn ? {flex: 0} : null, {...loadingOuterContainerStyle}]}>
-        <View style={[secondary ? styles.buttonSecondary : styles.buttonPrimary, {opacity: 0.6}, {...loadingButtonStyle}, disabled ? { backgroundColor: G.theme.loader.primary } : null]}>
-          <ActivityIndicator size="large" color={G.theme.loader.primary} />
-        </View>
+      <View style={[styles.buttonPrimary, {opacity: 0.6}, disabled ? styles.disabled : null]}>
+        <ActivityIndicator size="large" color={G.theme.loader.secondary} />
       </View>
       :
     <TouchableOpacity
@@ -33,12 +26,11 @@ const Button = ({
     accessibilityLabel={testID}
     disabled={disabled}
     activeOpacity={0.6}
-    style={[styles.container,forColumn ? {flex: 0} : null, {...outerContainerStyle}]}
         onPress={() => {
           action();
         }}
       >
-    <View style={[secondary ? styles.buttonSecondary : styles.buttonPrimary, {...buttonStyle}, disabled ? { backgroundColor: G.theme.app.grey, borderWidth: 0 } : null]}>
+    <View style={[styles.buttonPrimary, {...buttonStyle}, disabled ? { backgroundColor: G.theme.app.grey, borderWidth: 0 } : null]}>
       <StyledText f4 secondary bold>
         {title.toUpperCase()}
       </StyledText>
@@ -53,28 +45,15 @@ const styles = StyleSheet.create({
   buttonPrimary: {
     backgroundColor: G.theme.app.accent,
     borderRadius: G.radius_size.f5,
-    flex: 1,
-    height: 35,
+    height: 40,
+    minWidth: 100,
     justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: G.spacing.f2
+    paddingHorizontal: G.spacing.f5
   },
-  buttonSecondary: {
-    backgroundColor: G.theme.app.white,
-    borderColor: G.theme.app.primary,
-    borderWidth: 2,
-    borderRadius: G.radius_size.f5,
-    flex: 1,
-    height: 35,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: G.spacing.f2
+  disabled: {
+    backgroundColor: G.theme.loader.secondary
   },
-  container: {
-    flex: 1,
-    alignItems: "center",
-    flexDirection: "row"
-  }
 });
 
 export default Button;

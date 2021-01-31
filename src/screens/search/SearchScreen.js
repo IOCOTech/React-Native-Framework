@@ -15,14 +15,14 @@ import G from "../../../styles/import_globals";
 // redux imports
 import {connect} from 'react-redux';
 
-const MoreScreen = ({navigation}) => {
+const SearchScreen = ({navigation}) => {
   return (
     <>
     {/* Custom component similar to a View but with props for styling */}
     <Container flex={1}  alignItems={"center"} justifyContent={"center"} padding={G.spacing.f5}>
-        <StyledText bold f6 secondary center>Shop Screen</StyledText>
+        <StyledText bold f6 secondary center>Search Screen</StyledText>
         <Spacer medium/>
-        <Button title={"Product"} action={() => navigation.push(SCREENS.PRODUCT)}/>
+        <Button title={"Results"} action={() => navigation.push(SCREENS.RESULTS)}/>
     </Container>
     </>
   );
@@ -44,4 +44,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MoreScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchScreen);

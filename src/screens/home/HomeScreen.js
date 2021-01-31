@@ -2,13 +2,15 @@
 import React from 'react';
 import {
   StyleSheet,
-  Image
+  Image,
 } from 'react-native';
 // Custom component imports
 import Container from "../../components/shared/Container";
 import StyledText from '../../components/shared/StyledText';
 import Spacer from "../../components/shared/Spacer";
 import Button from "../../components/shared/Button";
+// Constants
+import SCREENS from "../../constants/screenConstants";
 // Global style sheet imports
 import G from "../../../styles/import_globals";
 // redux imports
@@ -18,7 +20,7 @@ import {
 } from '../../redux';
 import {connect} from 'react-redux';
 
-const HomeScreen = ({add, remove, counter}) => {
+const HomeScreen = ({add, remove, counter, navigation}) => {
   return (
     <>
     {/* Custom component similar to a View but with props for styling */}
@@ -40,13 +42,15 @@ const HomeScreen = ({add, remove, counter}) => {
         </StyledText>
         <Spacer large/>
         <Container alignItems={"center"} justifyContent={"space-between"} flexDirection={"row"}>
-        {/* Custom component that acts like a button */}
-        <Button action={() => add()} title={"Add"}></Button>
-        <Spacer meduim/>
-        <StyledText bold f8 primary>{counter.count}</StyledText>
-        <Spacer meduim/>
-        <Button action={() => remove()} title={"Remove"}></Button>
+          {/* Custom component that acts like a button */}
+          <Button action={() => add()} title={"Add"}></Button>
+          <Spacer meduim/>
+          <StyledText bold f8 primary>{counter.count}</StyledText>
+          <Spacer meduim/>
+          <Button action={() => remove()} title={"Remove"}></Button>
         </Container>
+        <Spacer medium/>
+        <Button title={"Details"} action={() => navigation.push(SCREENS.DETAILS)}/>
     </Container>
     </>
   );

@@ -6,17 +6,24 @@ import {
 // Custom component imports
 import Container from "../../components/shared/Container";
 import StyledText from '../../components/shared/StyledText';
+import Button from "../../components/shared/Button";
+import Spacer from "../../components/shared/Spacer";
 // Global style sheet imports
 import G from "../../../styles/import_globals";
+// Constants
+import SCREENS from "../../constants/screenConstants";
 // redux imports
 import {connect} from 'react-redux';
 
-const MoreScreen = () => {
+const LoginScreen = ({navigation}) => {
   return (
     <>
     {/* Custom component similar to a View but with props for styling */}
     <Container flex={1}  alignItems={"center"} justifyContent={"center"} padding={G.spacing.f5}>
-        <StyledText bold f6 secondary center>More Screen</StyledText>
+        <Spacer medium/>
+        <Button title={"Login"} action={() => navigation.push(SCREENS.SIGN_UP)}/>
+        <Spacer medium/>
+        <Button title={"Sign up"} action={() => navigation.push(SCREENS.SIGN_UP)}/>
     </Container>
     </>
   );
@@ -38,4 +45,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MoreScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);
