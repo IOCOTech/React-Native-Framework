@@ -23,6 +23,11 @@ const SearchScreen = ({navigation}) => {
         <StyledText bold f6 secondary center>Search Screen</StyledText>
         <Spacer medium/>
         <Button title={"Results"} action={() => navigation.push(SCREENS.RESULTS)}/>
+        <Spacer medium/>
+        <Button title={"Home details"} action={() => navigation.navigate(SCREENS.HOME, {
+          screen: SCREENS.DETAILS,
+          params: { name: "data"}
+        })}/>
     </Container>
     </>
   );

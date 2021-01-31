@@ -51,6 +51,8 @@ const HomeScreen = ({add, remove, counter, navigation}) => {
         </Container>
         <Spacer medium/>
         <Button title={"Details"} action={() => navigation.push(SCREENS.DETAILS)}/>
+        <Spacer medium/>
+        <Button title={"Drawer"} action={() => navigation.toggleDrawer()}/>
     </Container>
     </>
   );

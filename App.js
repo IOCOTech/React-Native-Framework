@@ -1,5 +1,5 @@
 // React imports
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   StyleSheet,
 } from 'react-native';
@@ -14,7 +14,9 @@ import SearchScreen from "./src/screens/search/SearchScreen";
 import ResultsScreen from "./src/screens/search/ResultsScreen";
 import ShopScreen from "./src/screens/shop/ShopScreen";
 import ProductScreen from "./src/screens/shop/ProductScreen";
+import SplashScreen from "./src/screens/splash/SplashScreen";
 // redux imports
+import { checkAuth } from "./src/redux";
 import {connect} from 'react-redux';
 // Constants
 import SCREENS from "./src/constants/screenConstants";
@@ -22,6 +24,7 @@ import SCREENS from "./src/constants/screenConstants";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
 
 const AuthStack = createStackNavigator();
@@ -29,6 +32,7 @@ const Tabs = createBottomTabNavigator();
 const HomeStack = createStackNavigator();
 const ShopStack = createStackNavigator();
 const SearchStack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const HomeStackScreen = () => {
   return (
@@ -36,15 +40,6 @@ const HomeStackScreen = () => {
       <HomeStack.Screen name={SCREENS.HOME} component={HomeScreen}/>
       <HomeStack.Screen name={SCREENS.DETAILS} component={DetailsScreen}/>
     </HomeStack.Navigator>
-  );
-};
-
-const ShopStackScreen = () => {
-  return (
-    <ShopStack.Navigator>
-      <ShopStack.Screen name={SCREENS.SHOP} component={ShopScreen}/>
-      <SearchStack.Screen name={SCREENS.PRODUCT} component={ProductScreen}/>
-    </ShopStack.Navigator>
   );
 };
 
@@ -57,19 +52,52 @@ const SearchStackScreen = () => {
   );
 };
 
+const ShopStackScreen = () => {
+  return (
+    <ShopStack.Navigator>
+      <ShopStack.Screen name={SCREENS.SHOP} component={ShopScreen}/>
+      <SearchStack.Screen name={SCREENS.PRODUCT} component={ProductScreen}/>
+    </ShopStack.Navigator>
+  );
+};
 
-const App = () => {
+const AppTabs = () => {
+  return (
+    <Tabs.Navigator tabBarOptions={{style: styles.bottomTabs}}>
+        <Tabs.Screen name={SCREENS.HOME} component={HomeStackScreen}/>
+        <Tabs.Screen name={SCREENS.SEARCH} component={SearchStackScreen}/>
+    </Tabs.Navigator>
+  );
+}
+
+
+const App = ({auth ,checkAuth}) => {
+
+  useEffect(() => {
+    setTimeout(() => {
+      checkAuth(true)
+    }, 1000);
+  },[]);
+
+  if(auth.loading) {
+    return (
+      <SplashScreen/>
+    )
+  }
+
   return (
     <NavigationContainer>
-      <Tabs.Navigator tabBarOptions={{style: styles.bottomTabs}}>
-        <Tabs.Screen name={SCREENS.HOME} component={HomeStackScreen}/>
-        <Tabs.Screen name={SCREENS.SHOP} component={ShopStackScreen}/>
-        <Tabs.Screen name={SCREENS.SEARCH} component={SearchStackScreen}/>
-      </Tabs.Navigator>
-      {/* <AuthStack.Navigator>
-        <AuthStack.Screen name={SCREENS.LOGIN} component={LoginScreen} options={{title: "Login"}}/>
-        <AuthStack.Screen name={SCREENS.SIGN_UP} component={SignUpScreen} options={{title: "Sign up"}}/>
-      </AuthStack.Navigator> */}
+      {auth.token ? 
+        <Drawer.Navigator>
+          <Drawer.Screen name={SCREENS.HOME} component={AppTabs}/>
+          <Drawer.Screen name={SCREENS.SHOP} component={ShopStackScreen}/>
+        </Drawer.Navigator>
+        :
+        <AuthStack.Navigator>
+          <AuthStack.Screen name={SCREENS.LOGIN} component={LoginScreen} options={{title: "Login"}}/>
+          <AuthStack.Screen name={SCREENS.SIGN_UP} component={SignUpScreen} options={{title: "Sign up"}}/>
+        </AuthStack.Navigator>
+      }
     </NavigationContainer>
   );
 };
@@ -87,12 +115,14 @@ const styles = StyleSheet.create({
 // Mapping the redux state to props
 const mapStateToProps = state => {
   return {
+    auth: state.auth
   }
 }
 
 // Mapping the redux actions to props
 const mapDispatchToProps = (dispatch) => {
   return {
+    checkAuth: success => dispatch(checkAuth(success))
   }
 }
 
