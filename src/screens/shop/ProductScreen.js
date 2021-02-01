@@ -16,7 +16,7 @@ const ProductScreen = ({navigation}) => {
     <>
     {/* Custom component similar to a View but with props for styling */}
     <Container flex={1}  alignItems={"center"} justifyContent={"center"} padding={G.spacing.f5}>
-        <StyledText bold f6 secondary center>ProductScreen Screen</StyledText>
+        <StyledText bold f6 secondary center>Product Screen</StyledText>
     </Container>
     </>
   );

@@ -11,13 +11,12 @@ const Button = ({
   testID, 
   title, 
   action=() => {}, 
-  buttonStyle, 
   disabled }) => {
   return (
     // Component start
     loading ? 
       <View style={[styles.buttonPrimary, {opacity: 0.6}, disabled ? styles.disabled : null]}>
-        <ActivityIndicator size="large" color={G.theme.loader.secondary} />
+        <ActivityIndicator size="large" color={G.theme.loader.white} />
       </View>
       :
     <TouchableOpacity
@@ -30,8 +29,8 @@ const Button = ({
           action();
         }}
       >
-    <View style={[styles.buttonPrimary, {...buttonStyle}, disabled ? { backgroundColor: G.theme.app.grey, borderWidth: 0 } : null]}>
-      <StyledText f4 secondary bold>
+    <View style={[styles.buttonPrimary, disabled ? { backgroundColor: G.theme.app.grey, borderWidth: 0 } : null]}>
+      <StyledText f5 white regular>
         {title.toUpperCase()}
       </StyledText>
     </View>
@@ -43,13 +42,15 @@ const Button = ({
 // custom styles for this element
 const styles = StyleSheet.create({
   buttonPrimary: {
-    backgroundColor: G.theme.app.accent,
-    borderRadius: G.radius_size.f5,
-    height: 40,
+    backgroundColor: G.theme.app.secondary,
+    borderRadius: G.radius_size.f4,
+    height: 50,
     minWidth: 100,
     justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: G.spacing.f5
+    paddingHorizontal: G.spacing.f5,
+    borderWidth: 1,
+    borderColor: G.theme.app.white
   },
   disabled: {
     backgroundColor: G.theme.loader.secondary

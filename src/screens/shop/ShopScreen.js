@@ -23,8 +23,6 @@ const MoreScreen = ({navigation}) => {
         <StyledText bold f6 secondary center>Shop Screen</StyledText>
         <Spacer medium/>
         <Button title={"Product"} action={() => navigation.push(SCREENS.PRODUCT)}/>
-        <Spacer medium/>
-        <Button title={"Drawer"} action={() => navigation.toggleDrawer()}/>
     </Container>
     </>
   );

@@ -27,48 +27,68 @@
 //  1. palettes
 //  -----------------------------------------------
 const app_pallete = {
-  primary: "#0f6987",
-  secondary: "#333333",
-  accent: "#ffcc00",
+  primary: "#27536B",
+  secondary: "#1B5F85",
+  accent: "#D87145",
   white: "#ffffff",
-  grey: "#eeeeee",
+  offWhite: "#EFEFEF",
+  grey: "#555555",
   black: "#000000",
+  error: "#D84545",
+  warning: "#D89D45",
+  success: "#74D845",
 }
 
 const font_pallete = {
-  primary: "#0f6987",
-  secondary: "#333333",
-  accent: "#ffcc00",
+  primary: "#27536B",
+  secondary: "#1B5F85",
+  accent: "#D87145",
   white: "#ffffff",
-  grey: "#eeeeee",
+  offWhite: "#EFEFEF",
+  grey: "#555555",
   black: "#000000",
+  error: "#D84545",
+  warning: "#D89D45",
+  success: "#74D845",
 }
 
 const icon_pallete = {
-  primary: "#0f6987",
-  secondary: "#333333",
-  accent: "#ffcc00",
+  primary: "#27536B",
+  secondary: "#1B5F85",
+  accent: "#D87145",
   white: "#ffffff",
-  grey: "#eeeeee",
+  offWhite: "#EFEFEF",
+  grey: "#555555",
   black: "#000000",
+  error: "#D84545",
+  warning: "#D89D45",
+  success: "#74D845",
 }
 
 const loader_pallete = {
-  primary: "#0f6987",
-  secondary: "#333333",
-  accent: "#ffcc00",
+  primary: "#27536B",
+  secondary: "#1B5F85",
+  accent: "#D87145",
   white: "#ffffff",
-  grey: "#eeeeee",
+  offWhite: "#EFEFEF",
+  grey: "#555555",
   black: "#000000",
+  error: "#D84545",
+  warning: "#D89D45",
+  success: "#74D845",
 }
 
 const snackbar_pallete = {
-  primary: "#0f6987",
-  secondary: "#333333",
-  accent: "#ffcc00",
+  primary: "#27536B",
+  secondary: "#1B5F85",
+  accent: "#D87145",
   white: "#ffffff",
-  grey: "#eeeeee",
+  offWhite: "#EFEFEF",
+  grey: "#555555",
   black: "#000000",
+  error: "#D84545",
+  warning: "#D89D45",
+  success: "#74D845",
 }
 
 //  2. theme
@@ -92,6 +112,9 @@ const spacing = {
   f5 : 24,
   f6 : 32,
   f7 : 42,
+  f8 : 60,
+  f9 : 80,
+  f10 : 100,
 };
 
 //  4. font_size
@@ -168,15 +191,15 @@ const font_family = {
 const icon_size = {
   f0 : 0,
   f1 : 10,
-  f2 : 20,
-  f3 : 30,
-  f4 : 40,
-  f5 : 50,
-  f6 : 60,
-  f7 : 70,
-  f8 : 80,
-  f9 : 90,
-  f10 : 100,
+  f2 : 15,
+  f3 : 20,
+  f4 : 25,
+  f5 : 30,
+  f6 : 35,
+  f7 : 40,
+  f8 : 45,
+  f9 : 50,
+  f10 : 60,
 };
 
 //  10. border_thickness

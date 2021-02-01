@@ -11,12 +11,12 @@ import G from "../../../styles/import_globals";
 // redux imports
 import {connect} from 'react-redux';
 
-const DetailsScreen = ({navigation}) => {
+const ProfileScreen = ({navigation}) => {
   return (
     <>
     {/* Custom component similar to a View but with props for styling */}
     <Container flex={1}  alignItems={"center"} justifyContent={"center"} padding={G.spacing.f5}>
-        <StyledText bold f6 secondary center>Details Screen</StyledText>
+        <StyledText bold f6 secondary center>Profile Screen</StyledText>
     </Container>
     </>
   );
@@ -38,4 +38,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DetailsScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen);

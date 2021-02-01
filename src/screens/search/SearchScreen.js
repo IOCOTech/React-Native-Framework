@@ -24,8 +24,8 @@ const SearchScreen = ({navigation}) => {
         <Spacer medium/>
         <Button title={"Results"} action={() => navigation.push(SCREENS.RESULTS)}/>
         <Spacer medium/>
-        <Button title={"Home details"} action={() => navigation.navigate(SCREENS.HOME, {
-          screen: SCREENS.DETAILS,
+        <Button title={"Home profile"} action={() => navigation.navigate(SCREENS.HOME, {
+          screen: SCREENS.PROFILE,
           params: { name: "data"}
         })}/>
     </Container>

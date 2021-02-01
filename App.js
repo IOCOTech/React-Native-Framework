@@ -5,71 +5,18 @@ import {
 } from 'react-native';
 // Global
 import G from './styles/import_globals';
+import S from "./styles/import_global_styles"; 
 // Custom Screens imports
-import LoginScreen from "./src/screens/auth/LoginScreen";
-import SignUpScreen from "./src/screens/auth/SignUpScreen";
-import HomeScreen from "./src/screens/home/HomeScreen";
-import DetailsScreen from "./src/screens/home/DetailsScreen";
-import SearchScreen from "./src/screens/search/SearchScreen";
-import ResultsScreen from "./src/screens/search/ResultsScreen";
-import ShopScreen from "./src/screens/shop/ShopScreen";
-import ProductScreen from "./src/screens/shop/ProductScreen";
 import SplashScreen from "./src/screens/splash/SplashScreen";
 // redux imports
 import { checkAuth } from "./src/redux";
 import {connect} from 'react-redux';
-// Constants
-import SCREENS from "./src/constants/screenConstants";
 // Navigation
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-
-
-const AuthStack = createStackNavigator();
-const Tabs = createBottomTabNavigator();
-const HomeStack = createStackNavigator();
-const ShopStack = createStackNavigator();
-const SearchStack = createStackNavigator();
-const Drawer = createDrawerNavigator();
-
-const HomeStackScreen = () => {
-  return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen name={SCREENS.HOME} component={HomeScreen}/>
-      <HomeStack.Screen name={SCREENS.DETAILS} component={DetailsScreen}/>
-    </HomeStack.Navigator>
-  );
-};
-
-const SearchStackScreen = () => {
-  return (
-    <SearchStack.Navigator>
-      <SearchStack.Screen name={SCREENS.SEARCH} component={SearchScreen}/>
-      <SearchStack.Screen name={SCREENS.RESULTS} component={ResultsScreen}/>
-    </SearchStack.Navigator>
-  );
-};
-
-const ShopStackScreen = () => {
-  return (
-    <ShopStack.Navigator>
-      <ShopStack.Screen name={SCREENS.SHOP} component={ShopScreen}/>
-      <SearchStack.Screen name={SCREENS.PRODUCT} component={ProductScreen}/>
-    </ShopStack.Navigator>
-  );
-};
-
-const AppTabs = () => {
-  return (
-    <Tabs.Navigator tabBarOptions={{style: styles.bottomTabs}}>
-        <Tabs.Screen name={SCREENS.HOME} component={HomeStackScreen}/>
-        <Tabs.Screen name={SCREENS.SEARCH} component={SearchStackScreen}/>
-    </Tabs.Navigator>
-  );
-}
-
+// Navigation Stacks
+import AuthStackScreen from "./src/navigation/AuthStackScreen";
+// Navigation Tabs
+import AppTabs from "./src/navigation/AppTabs";
 
 const App = ({auth ,checkAuth}) => {
 
@@ -88,15 +35,9 @@ const App = ({auth ,checkAuth}) => {
   return (
     <NavigationContainer>
       {auth.token ? 
-        <Drawer.Navigator>
-          <Drawer.Screen name={SCREENS.HOME} component={AppTabs}/>
-          <Drawer.Screen name={SCREENS.SHOP} component={ShopStackScreen}/>
-        </Drawer.Navigator>
+        <AppTabs/>
         :
-        <AuthStack.Navigator>
-          <AuthStack.Screen name={SCREENS.LOGIN} component={LoginScreen} options={{title: "Login"}}/>
-          <AuthStack.Screen name={SCREENS.SIGN_UP} component={SignUpScreen} options={{title: "Sign up"}}/>
-        </AuthStack.Navigator>
+        <AuthStackScreen />
       }
     </NavigationContainer>
   );
@@ -107,9 +48,6 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1
   },
-  bottomTabs: {
-    backgroundColor: G.theme.app.secondary,
-  }
 });
 
 // Mapping the redux state to props
