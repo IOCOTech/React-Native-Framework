@@ -17,7 +17,7 @@ import {connect} from 'react-redux';
 const SplashScreen = ({navigation}) => {
   return (
       <Container flex={1} backgroundColor={G.theme.app.primary} alignItems={"center"} justifyContent={"center"} padding={G.spacing.f5}>
-          <Image style={styles.logoImg} source={G.image_urls.ioco_logo}/>
+          <Image style={styles.logoImg} source={G.image_urls.logo}/>
       </Container>
   );
 };

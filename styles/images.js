@@ -9,7 +9,7 @@
 //  1. image_urls
 //  -----------------------------------------------
 const image_urls = {
-  ioco_logo: require("../assets/images/ioco-logo.png"),
+  logo: require("../assets/images/logo.png"),
 };
 
 export {
