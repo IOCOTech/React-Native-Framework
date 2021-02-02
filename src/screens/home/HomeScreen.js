@@ -1,5 +1,5 @@
 // React imports
-import React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   Image,
@@ -21,6 +21,7 @@ import G from "../../../styles/import_globals";
 import {connect} from 'react-redux';
 
 const HomeScreen = ({navigation}) => {
+  
   return (
     <Container paddingHorizontal={G.spacing.f4} flex={1} backgroundColor={G.theme.app.primary}>
       <ScrollView style={{flexGrow: 1}} showsVerticalScrollIndicator={false}>
@@ -49,10 +50,10 @@ const HomeScreen = ({navigation}) => {
         <Container flexDirection={"row"} justifyContent={"space-between"}>
           <Container flex={1}>
           <StyledText style={{backgroundColor: G.theme.app.white, fontSize: 16}} primary medium>primary ({G.theme.font.primary})</StyledText>
-          <StyledText style={{backgroundColor: G.theme.app.white, fontSize: 16}} secondary medium>secondary</StyledText>
-          <StyledText style={{backgroundColor: G.theme.app.white, fontSize: 16}} grey medium>grey</StyledText>
-          <StyledText style={{backgroundColor: G.theme.app.white, fontSize: 16}} accent medium>accent</StyledText>
-          <StyledText style={{backgroundColor: G.theme.app.accent, fontSize: 16}} offWhite medium>offWhite</StyledText>
+          <StyledText style={{backgroundColor: G.theme.app.white, fontSize: 16}} secondary medium>secondary ({G.theme.font.secondary})</StyledText>
+          <StyledText style={{backgroundColor: G.theme.app.white, fontSize: 16}} grey medium>grey ({G.theme.font.grey})</StyledText>
+          <StyledText style={{backgroundColor: G.theme.app.white, fontSize: 16}} accent medium>accent ({G.theme.font.accent})</StyledText>
+          <StyledText style={{backgroundColor: G.theme.app.accent, fontSize: 16}} offWhite medium>offWhite ({G.theme.font.offWhite})</StyledText>
           </Container>
           <Spacer medium/>
           <Container flex={1}>
@@ -119,6 +120,93 @@ const HomeScreen = ({navigation}) => {
           <Container alignItems={"center"} justifyContent={"flex-end"}>
             <Icon name="user" color={G.theme.icon.white} size={G.icon_size.f10} />
             <Text style={{fontFamily: G.font_family.bold, fontSize: 14, color: "white"}}>icon_size.f10 ({G.icon_size.f10})</Text>
+          </Container>
+        </Container>
+        <Spacer large/>
+        <Text style={{fontFamily: G.font_family.bold, fontSize: 18, color: "white"}}>Theme app colors (G.theme.app.primary)</Text>
+        <Spacer small/>
+        <Container containerStyles={{borderColor: "white", borderWidth: 1, padding: 5}} backgroundColor={G.theme.app.primary} alignItems={"center"} justifyContent={"center"} marginTop={5}>
+           <Text style={{fontSize: 18, color: "white"}}>primary</Text>
+        </Container>
+        <Container containerStyles={{borderColor: "white", borderWidth: 1, padding: 5}} backgroundColor={G.theme.app.secondary} alignItems={"center"} justifyContent={"center"} marginTop={5}>
+           <Text style={{fontSize: 18, color: "white"}}>secondary</Text>
+        </Container>
+        <Container containerStyles={{borderColor: "white", borderWidth: 1, padding: 5}} backgroundColor={G.theme.app.accent} alignItems={"center"} justifyContent={"center"} marginTop={5}>
+           <Text style={{fontSize: 18, color: "black"}}>accent</Text>
+        </Container>
+        <Container containerStyles={{borderColor: "white", borderWidth: 1, padding: 5}} backgroundColor={G.theme.app.offWhite} alignItems={"center"} justifyContent={"center"} marginTop={5}>
+           <Text style={{fontSize: 18, color: "black"}}>offWhite</Text>
+        </Container>
+        <Container containerStyles={{borderColor: "white", borderWidth: 1, padding: 5}} backgroundColor={G.theme.app.white} alignItems={"center"} justifyContent={"center"} marginTop={5}>
+           <Text style={{fontSize: 18, color: "black"}}>white</Text>
+        </Container>
+        <Container containerStyles={{borderColor: "white", borderWidth: 1, padding: 5}} backgroundColor={G.theme.app.black} alignItems={"center"} justifyContent={"center"} marginTop={5}>
+           <Text style={{fontSize: 18, color: "white"}}>black</Text>
+        </Container>
+        <Container containerStyles={{borderColor: "white", borderWidth: 1, padding: 5}} backgroundColor={G.theme.app.grey} alignItems={"center"} justifyContent={"center"} marginTop={5}>
+           <Text style={{fontSize: 18, color: "white"}}>grey</Text>
+        </Container>
+        <Container containerStyles={{borderColor: "white", borderWidth: 1, padding: 5}} backgroundColor={G.theme.app.success} alignItems={"center"} justifyContent={"center"} marginTop={5}>
+           <Text style={{fontSize: 18, color: "black"}}>success</Text>
+        </Container>
+        <Container containerStyles={{borderColor: "white", borderWidth: 1, padding: 5}} backgroundColor={G.theme.app.warning} alignItems={"center"} justifyContent={"center"} marginTop={5}>
+           <Text style={{fontSize: 18, color: "white"}}>warning</Text>
+        </Container>
+        <Container containerStyles={{borderColor: "white", borderWidth: 1, padding: 5}} backgroundColor={G.theme.app.error} alignItems={"center"} justifyContent={"center"} marginTop={5}>
+           <Text style={{fontSize: 18, color: "white"}}>error</Text>
+        </Container>
+        <Spacer large/>
+        <Text style={{fontFamily: G.font_family.bold, fontSize: 18, color: "white"}}>Radius size (radius_size.f1)</Text>
+        <Spacer medium/>
+        <Container flexDirection={"row"} justifyContent={"space-between"} align={"center"}>
+          <Container alignItems={"center"} justifyContent={"flex-end"}>
+            <Container containerStyles={{borderRadius: G.radius_size.f1}} backgroundColor={"white"} width={40} height={40}></Container>
+            <Text style={{fontFamily: G.font_family.bold, fontSize: 14, color: "white"}}>radius_size.f1 ({G.radius_size.f1})</Text>
+          </Container>
+          <Container alignItems={"center"} justifyContent={"flex-end"}>
+            <Container containerStyles={{borderRadius: G.radius_size.f2}} backgroundColor={"white"} width={40} height={40}></Container>
+            <Text style={{fontFamily: G.font_family.bold, fontSize: 14, color: "white"}}>radius_size.f2 ({G.radius_size.f2})</Text>
+          </Container>
+          <Container alignItems={"center"} justifyContent={"flex-end"}>
+            <Container containerStyles={{borderRadius: G.radius_size.f3}} backgroundColor={"white"} width={40} height={40}></Container>
+            <Text style={{fontFamily: G.font_family.bold, fontSize: 14, color: "white"}}>radius_size.f3 ({G.radius_size.f3})</Text>
+          </Container>
+        </Container>
+        <Spacer medium/>
+        <Container flexDirection={"row"} justifyContent={"space-between"} align={"center"}>
+          <Container alignItems={"center"} justifyContent={"flex-end"}>
+            <Container containerStyles={{borderRadius: G.radius_size.f4}} backgroundColor={"white"} width={40} height={40}></Container>
+            <Text style={{fontFamily: G.font_family.bold, fontSize: 14, color: "white"}}>radius_size.f4 ({G.radius_size.f4})</Text>
+          </Container>
+          <Container alignItems={"center"} justifyContent={"flex-end"}>
+            <Container containerStyles={{borderRadius: G.radius_size.f5}} backgroundColor={"white"} width={40} height={40}></Container>
+            <Text style={{fontFamily: G.font_family.bold, fontSize: 14, color: "white"}}>radius_size.f5 ({G.radius_size.f5})</Text>
+          </Container>
+          <Container alignItems={"center"} justifyContent={"flex-end"}>
+            <Container containerStyles={{borderRadius: G.radius_size.f6}} backgroundColor={"white"} width={40} height={40}></Container>
+            <Text style={{fontFamily: G.font_family.bold, fontSize: 14, color: "white"}}>radius_size.f6 ({G.radius_size.f6})</Text>
+          </Container>
+        </Container>
+        <Spacer medium/>
+        <Container flexDirection={"row"} justifyContent={"space-between"} align={"center"}>
+          <Container alignItems={"center"} justifyContent={"flex-end"}>
+            <Container containerStyles={{borderRadius: G.radius_size.f7}} backgroundColor={"white"} width={40} height={40}></Container>
+            <Text style={{fontFamily: G.font_family.bold, fontSize: 14, color: "white"}}>radius_size.f7 ({G.radius_size.f7})</Text>
+          </Container>
+          <Container alignItems={"center"} justifyContent={"flex-end"}>
+            <Container containerStyles={{borderRadius: G.radius_size.f8}} backgroundColor={"white"} width={40} height={40}></Container>
+            <Text style={{fontFamily: G.font_family.bold, fontSize: 14, color: "white"}}>radius_size.f8 ({G.radius_size.f8})</Text>
+          </Container>
+          <Container alignItems={"center"} justifyContent={"flex-end"}>
+            <Container containerStyles={{borderRadius: G.radius_size.f9}} backgroundColor={"white"} width={40} height={40}></Container>
+            <Text style={{fontFamily: G.font_family.bold, fontSize: 14, color: "white"}}>radius_size.f9 ({G.radius_size.f9})</Text>
+          </Container>
+        </Container>
+        <Spacer medium/>
+        <Container flexDirection={"row"} justifyContent={"space-between"} align={"center"}>
+          <Container alignItems={"center"} justifyContent={"flex-end"}>
+            <Container containerStyles={{borderRadius: G.radius_size.f10}} backgroundColor={"white"} width={40} height={40}></Container>
+            <Text style={{fontFamily: G.font_family.bold, fontSize: 14, color: "white"}}>radius_size.f10 ({G.radius_size.f10})</Text>
           </Container>
         </Container>
         <Spacer large/>
