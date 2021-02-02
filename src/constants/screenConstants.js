@@ -4,7 +4,7 @@ export default SCREENS = {
   HOME: "home",
   SHOP: "shop",
   SEARCH: "search",
-  PROFILE: "PROFILE",
+  PROFILE: "profile",
   RESULTS: "results",
   PRODUCT: "product"
 }

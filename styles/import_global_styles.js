@@ -1,3 +1,7 @@
+//  ***** Disclaimer *****
+//  This file contains the global styles objects for elements.
+//  *********************
+
 import G from "./import_globals"
 
 const screenOptions = {
@@ -22,8 +26,8 @@ const tabBarOptions = {
   style: {
     backgroundColor: G.theme.app.primary,
     borderTopWidth: 0,
-    position: "absolute",
-    elevation: 0
+    elevation: 0,
+    height: 65 
   },
   tabStyle: {},
   activeTintColor: G.theme.app.accent,

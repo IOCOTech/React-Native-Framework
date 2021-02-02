@@ -29,7 +29,7 @@
 const app_pallete = {
   primary: "#27536B",
   secondary: "#1B5F85",
-  accent: "#D87145",
+  accent: "#FDB833",
   white: "#ffffff",
   offWhite: "#EFEFEF",
   grey: "#555555",
@@ -42,7 +42,7 @@ const app_pallete = {
 const font_pallete = {
   primary: "#27536B",
   secondary: "#1B5F85",
-  accent: "#D87145",
+  accent: "#FDB833",
   white: "#ffffff",
   offWhite: "#EFEFEF",
   grey: "#555555",
@@ -55,7 +55,7 @@ const font_pallete = {
 const icon_pallete = {
   primary: "#27536B",
   secondary: "#1B5F85",
-  accent: "#D87145",
+  accent: "#FDB833",
   white: "#ffffff",
   offWhite: "#EFEFEF",
   grey: "#555555",
@@ -68,7 +68,7 @@ const icon_pallete = {
 const loader_pallete = {
   primary: "#27536B",
   secondary: "#1B5F85",
-  accent: "#D87145",
+  accent: "#FDB833",
   white: "#ffffff",
   offWhite: "#EFEFEF",
   grey: "#555555",
@@ -81,7 +81,7 @@ const loader_pallete = {
 const snackbar_pallete = {
   primary: "#27536B",
   secondary: "#1B5F85",
-  accent: "#D87145",
+  accent: "#FDB833",
   white: "#ffffff",
   offWhite: "#EFEFEF",
   grey: "#555555",

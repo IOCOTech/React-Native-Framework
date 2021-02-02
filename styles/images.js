@@ -1,5 +1,5 @@
 //  ***** Disclaimer *****
-//  This file contains the style stetting :es.
+//  This file contains the url paths to images.
 //  *********************
 //
 //  Table of Contents:
