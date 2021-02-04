@@ -10,21 +10,19 @@ import Button from "../../components/shared/Button";
 import Spacer from "../../components/shared/Spacer";
 // Constants
 import SCREENS from "../../constants/screenConstants";
-// Global style sheet imports
-import G from "../../../styles/import_globals";
 // redux imports
 import {connect} from 'react-redux';
 
-const SearchScreen = ({navigation}) => {
+const SearchScreen = ({navigation, theme}) => {
   return (
     <>
     {/* Custom component similar to a View but with props for styling */}
-    <Container flex={1}  alignItems={"center"} justifyContent={"center"} padding={G.spacing.f5}>
+    <Container flex={1} backgroundColor={theme.app.color.primary} alignItems={"center"} justifyContent={"center"}>
         <StyledText bold f6 secondary center>Search Screen</StyledText>
-        <Spacer medium/>
-        <Button title={"Results"} action={() => navigation.push(SCREENS.RESULTS)}/>
-        <Spacer medium/>
-        <Button title={"Home profile"} action={() => navigation.navigate(SCREENS.HOME, {
+        <Spacer theme={theme} medium/>
+        <Button theme={theme} title={"Results"} action={() => navigation.push(SCREENS.RESULTS)}/>
+        <Spacer theme={theme} medium/>
+        <Button theme={theme} title={"Home profile"} action={() => navigation.navigate(SCREENS.HOME, {
           screen: SCREENS.PROFILE,
           params: { name: "data"}
         })}/>
@@ -40,6 +38,7 @@ const styles = StyleSheet.create({
 // Mapping the redux state to props
 const mapStateToProps = state => {
   return {
+    theme: state.theme
   }
 }
 

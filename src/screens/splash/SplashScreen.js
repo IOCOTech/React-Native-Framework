@@ -2,22 +2,18 @@
 import React from 'react';
 import {
   StyleSheet,
-  ImageBackground,
   Image
 } from 'react-native';
 // Custom component imports
 import Container from "../../components/shared/Container";
-import StyledText from '../../components/shared/StyledText';
-import Spacer from "../../components/shared/Spacer";
-// Global style sheet imports
-import G from "../../../styles/import_globals";
 // redux imports
 import {connect} from 'react-redux';
 
-const SplashScreen = ({navigation}) => {
+const SplashScreen = ({navigation, theme}) => {
+  console.log(theme)
   return (
-      <Container flex={1} backgroundColor={G.theme.app.primary} alignItems={"center"} justifyContent={"center"} padding={G.spacing.f5}>
-          <Image style={styles.logoImg} source={G.image_urls.logo}/>
+      <Container flex={1} backgroundColor={theme.app.color.primary} alignItems={"center"} justifyContent={"center"}>
+          <Image style={styles.logoImg} source={theme.image.logo}/>
       </Container>
   );
 };
@@ -38,6 +34,7 @@ const styles = StyleSheet.create({
 // Mapping the redux state to props
 const mapStateToProps = state => {
   return {
+    theme: state.theme
   }
 }
 

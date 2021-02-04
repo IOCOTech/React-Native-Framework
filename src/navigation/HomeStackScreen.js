@@ -3,9 +3,6 @@ import React from 'react';
 import {
   TouchableOpacity
 } from 'react-native';
-// Global
-import G from '../../styles/import_globals';
-import S from "../../styles/import_global_styles"; 
 // Elements
 import Icon from 'react-native-vector-icons/FontAwesome';
 // Navigation
@@ -15,22 +12,56 @@ import HomeScreen from "../screens/home/HomeScreen";
 import ProfileScreen from "../screens/home/ProfileScreen";
 // Constants
 import SCREENS from "../constants/screenConstants";
+// redux imports
+import {connect} from 'react-redux';
 
 const HomeStack = createStackNavigator();
 
-const HomeStackScreen = ({navigation}) => {
+const HomeStackScreen = ({navigation, theme}) => {
+
+  const screenOptions = {
+    headerTitleAlign: "center",
+    headerStyle: { 
+      backgroundColor: theme.app.color.primary,
+      borderBottomWidth: 0,
+      elevation: 0,
+      height: 65
+    },
+    headerTitleStyle: {
+      color: theme.font.color.white,
+      fontSize: theme.font.size.f6
+    },
+    headerRightContainerStyle: {
+      paddingRight: theme.spacing.f5
+    },
+    headerTintColor: theme.app.color.white
+  } 
+
     return (
       <HomeStack.Navigator>
-        <HomeStack.Screen name={SCREENS.HOME} component={HomeScreen} options={{...S.screenOptions,
+        <HomeStack.Screen name={SCREENS.HOME} component={HomeScreen} options={{...screenOptions,
         headerRight: () => (
           <TouchableOpacity onPress={() => {navigation.navigate(SCREENS.PROFILE)}}>
-            <Icon name="user" color={G.theme.icon.white} size={G.icon_size.f3} />
+            <Icon name="user" color={theme.icon.color.white} size={theme.icon.size.f3} />
           </TouchableOpacity>
         )
         }}/>
-        <HomeStack.Screen name={SCREENS.PROFILE} component={ProfileScreen} options={S.screenOptions}/>
+        <HomeStack.Screen name={SCREENS.PROFILE} component={ProfileScreen} options={screenOptions}/>
       </HomeStack.Navigator>
     );
   };
 
-export default HomeStackScreen
+// Mapping the redux state to props
+const mapStateToProps = state => {
+  return {
+    theme: state.theme
+  }
+}
+
+// Mapping the redux actions to props
+const mapDispatchToProps = (dispatch) => {
+  return {
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeStackScreen);

@@ -1,22 +1,39 @@
 // React imports
 import React from "react";
-import { View, StyleSheet, TouchableOpacity, ActivityIndicator } from "react-native";
-// Global imports
-import G from "../../../styles/import_globals";
+import { View, TouchableOpacity, ActivityIndicator } from "react-native";
 // Shared Component imports
 import StyledText from "./StyledText";
 
 const Button = ({ 
+  theme,
   loading, 
   testID, 
   title, 
   action=() => {}, 
   disabled }) => {
+
+  const styles = {
+    buttonPrimary: {
+      backgroundColor: theme.app.color.secondary,
+      borderRadius: theme.border.radius.f4,
+      height: 50,
+      minWidth: 100,
+      justifyContent: "center",
+      alignItems: "center",
+      paddingHorizontal: theme.spacing.f5,
+      borderWidth: 1,
+      borderColor: theme.app.color.white
+    },
+    disabled: {
+      backgroundColor: theme.loader.color.secondary
+    },
+  };
+
   return (
     // Component start
     loading ? 
       <View style={[styles.buttonPrimary, {opacity: 0.6}, disabled ? styles.disabled : null]}>
-        <ActivityIndicator size="large" color={G.theme.loader.white} />
+        <ActivityIndicator size="large" color={theme.loader.color.white} />
       </View>
       :
     <TouchableOpacity
@@ -29,8 +46,8 @@ const Button = ({
           action();
         }}
       >
-    <View style={[styles.buttonPrimary, disabled ? { backgroundColor: G.theme.app.grey, borderWidth: 0 } : null]}>
-      <StyledText f5 white regular>
+    <View style={[styles.buttonPrimary, disabled ? { backgroundColor: theme.app.color.grey, borderWidth: 0 } : null]}>
+      <StyledText theme={theme} f5 white regular>
         {title.toUpperCase()}
       </StyledText>
     </View>
@@ -39,22 +56,4 @@ const Button = ({
   );
 };
 
-// custom styles for this element
-const styles = StyleSheet.create({
-  buttonPrimary: {
-    backgroundColor: G.theme.app.secondary,
-    borderRadius: G.radius_size.f4,
-    height: 50,
-    minWidth: 100,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: G.spacing.f5,
-    borderWidth: 1,
-    borderColor: G.theme.app.white
-  },
-  disabled: {
-    backgroundColor: G.theme.loader.secondary
-  },
-});
-
-export default Button;
+export default Button

@@ -11,12 +11,12 @@ import G from "../../../styles/import_globals";
 // redux imports
 import {connect} from 'react-redux';
 
-const SignUpScreen = ({navigation}) => {
+const SignUpScreen = ({navigation, theme}) => {
   return (
     <>
     {/* Custom component similar to a View but with props for styling */}
-    <Container flex={1}  alignItems={"center"} justifyContent={"center"} padding={G.spacing.f5}>
-        <StyledText bold f6 secondary center>Sign up Screen</StyledText>
+    <Container flex={1} backgroundColor={theme.app.color.primary} alignItems={"center"} justifyContent={"center"}>
+        <StyledText theme={theme} bold f6 secondary center>Sign up Screen</StyledText>
     </Container>
     </>
   );
@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
 // Mapping the redux state to props
 const mapStateToProps = state => {
   return {
+    theme: state.theme
   }
 }
 

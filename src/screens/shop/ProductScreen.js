@@ -11,11 +11,11 @@ import G from "../../../styles/import_globals";
 // redux imports
 import {connect} from 'react-redux';
 
-const ProductScreen = ({navigation}) => {
+const ProductScreen = ({navigation, theme}) => {
   return (
     <>
     {/* Custom component similar to a View but with props for styling */}
-    <Container flex={1}  alignItems={"center"} justifyContent={"center"} padding={G.spacing.f5}>
+    <Container flex={1} backgroundColor={theme.app.color.primary} alignItems={"center"} justifyContent={"center"}>
         <StyledText bold f6 secondary center>Product Screen</StyledText>
     </Container>
     </>
@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
 // Mapping the redux state to props
 const mapStateToProps = state => {
   return {
+    theme: state.theme
   }
 }
 

@@ -1,17 +1,25 @@
 // React imports
 import React from "react";
-import { StyleSheet } from "react-native";
 // Elements
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input } from 'react-native-elements';
-// Global imports
-import G from "../../../styles/import_globals";
 
 const CustomInput = ({ 
   placeholder,
   iconName,
   onChangeText, 
+  theme
    }) => {
+
+  const styles = {
+    container: {
+      borderWidth: 1,
+      borderColor: theme.app.color.white,
+      paddingHorizontal: theme.spacing.f4,
+      borderRadius: theme.border.rauis.f4,
+    }
+  }
+
   return (
     // Component start
       <Input
@@ -19,13 +27,13 @@ const CustomInput = ({
       containerStyle={{paddingHorizontal: 0}}
       inputContainerStyle={styles.container}
       placeholder={placeholder}
-      placeholderTextColor={G.theme.app.offWhite}
-      color={G.theme.app.white}
+      placeholderTextColor={theme.app.color.offWhite}
+      color={theme.app.color.white}
       leftIcon={
         <Icon
           name={iconName}
-          size={G.icon_size.f4}
-          color={G.theme.icon.white}
+          size={theme.icon.size.f4}
+          color={theme.icon.color.white}
         />
       }
     />
@@ -33,14 +41,5 @@ const CustomInput = ({
   );
 };
 
-// custom styles for this element
-const styles = StyleSheet.create({
-  container: {
-    borderWidth: 1,
-    borderColor: G.theme.app.white,
-    paddingHorizontal: G.spacing.f4,
-    borderRadius: G.radius_size.f4,
-  }
-});
 
 export default CustomInput;

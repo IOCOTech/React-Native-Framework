@@ -1,9 +1,6 @@
 // React imports
 import React from "react";
-import { View, StyleSheet } from "react-native";
-// Global imports
-import G from "../../../styles/import_globals";
-
+import { View } from "react-native";
 
 const Container = (props) => {
  
@@ -94,17 +91,11 @@ const Container = (props) => {
       accessible={true}
       testID={props.testID}
       accessibilityLabel={props.testID}
-      style={[styles.container, {...alteredStyles}, {...props.containerStyles}]}>
+      style={[ {...alteredStyles}, {...props.containerStyles}]}>
       {props.children}
     </View>
     // Component end
   );
 };
-
-// custom styles for this element
-const styles = StyleSheet.create({
-  container: {
-  }
-});
 
 export default Container;

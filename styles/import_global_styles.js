@@ -1,7 +1,6 @@
 //  ***** Disclaimer *****
 //  This file contains the global styles objects for elements.
 //  *********************
-
 import G from "./import_globals"
 
 const screenOptions = {
