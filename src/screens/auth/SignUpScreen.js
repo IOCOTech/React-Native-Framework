@@ -6,8 +6,6 @@ import {
 // Custom component imports
 import Container from "../../components/shared/Container";
 import StyledText from '../../components/shared/StyledText';
-// Global style sheet imports
-import G from "../../../styles/import_globals";
 // redux imports
 import {connect} from 'react-redux';
 
@@ -16,7 +14,7 @@ const SignUpScreen = ({navigation, theme}) => {
     <>
     {/* Custom component similar to a View but with props for styling */}
     <Container flex={1} backgroundColor={theme.app.color.primary} alignItems={"center"} justifyContent={"center"}>
-        <StyledText theme={theme} bold f6 secondary center>Sign up Screen</StyledText>
+        <StyledText theme={theme} bold f6 primary center>Sign up Screen</StyledText>
     </Container>
     </>
   );

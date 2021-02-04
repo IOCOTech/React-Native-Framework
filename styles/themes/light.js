@@ -7,12 +7,12 @@
 //  your needs as the project progress 
 //  *********************
 
-export default generic = {
+export default light = {
     app: {
         color: {
-            primary: "#27536B",
-            secondary: "#1B5F85",
-            accent: "#FDB833",
+            primary: "#8AC9EB",
+            secondary: "#4CA4D4",
+            accent: "#ffffff",
             white: "#ffffff",
             offWhite: "#EFEFEF",
             grey: "#555555",
@@ -24,8 +24,8 @@ export default generic = {
     },
     font: {
         color: {
-            primary: "#ffffff",
-            secondary: "#000000",
+            primary: "#000000",
+            secondary: "#ffffff",
             accent: "#555555",
             white: "#ffffff",
             offWhite: "#EFEFEF",
@@ -83,8 +83,8 @@ export default generic = {
     },
     icon: {
         color: {
-            primary: "#ffffff",
-            secondary: "#000000",
+            primary: "#000000",
+            secondary: "#ffffff",
             accent: "#555555",
             white: "#ffffff",
             offWhite: "#EFEFEF",
@@ -110,8 +110,8 @@ export default generic = {
     },
     loader: {
         color: {
-            primary: "#ffffff",
-            secondary: "#000000",
+            primary: "#000000",
+            secondary: "#ffffff",
             accent: "#555555",
             white: "#ffffff",
             offWhite: "#EFEFEF",
@@ -137,8 +137,8 @@ export default generic = {
     },
     border: {
         color: {
-            primary: "#ffffff",
-            secondary: "#000000",
+            primary: "#000000",
+            secondary: "#ffffff",
             accent: "#555555",
             white: "#ffffff",
             offWhite: "#EFEFEF",

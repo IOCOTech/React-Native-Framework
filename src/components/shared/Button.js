@@ -22,7 +22,7 @@ const Button = ({
       alignItems: "center",
       paddingHorizontal: theme.spacing.f5,
       borderWidth: 1,
-      borderColor: theme.app.color.white
+      borderColor: theme.border.color.primary
     },
     disabled: {
       backgroundColor: theme.loader.color.secondary
@@ -33,7 +33,7 @@ const Button = ({
     // Component start
     loading ? 
       <View style={[styles.buttonPrimary, {opacity: 0.6}, disabled ? styles.disabled : null]}>
-        <ActivityIndicator size="large" color={theme.loader.color.white} />
+        <ActivityIndicator size="large" color={theme.loader.color.primary} />
       </View>
       :
     <TouchableOpacity
@@ -47,7 +47,7 @@ const Button = ({
         }}
       >
     <View style={[styles.buttonPrimary, disabled ? { backgroundColor: theme.app.color.grey, borderWidth: 0 } : null]}>
-      <StyledText theme={theme} f5 white regular>
+      <StyledText theme={theme} f5 primary regular>
         {title.toUpperCase()}
       </StyledText>
     </View>

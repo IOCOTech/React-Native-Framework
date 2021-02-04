@@ -18,7 +18,7 @@ const MoreScreen = ({navigation, theme}) => {
     <>
     {/* Custom component similar to a View but with props for styling */}
     <Container flex={1} backgroundColor={theme.app.color.primary} alignItems={"center"} justifyContent={"center"}>
-        <StyledText bold f6 primary center>Shop Screen</StyledText>
+        <StyledText theme={theme} bold f6 primary center>Shop Screen</StyledText>
         <Spacer theme={theme} medium/>
         <Button theme={theme} title={"Product"} action={() => navigation.push(SCREENS.PRODUCT)}/>
     </Container>

@@ -14,7 +14,7 @@ const ResultsScreen = ({navigation, theme}) => {
     <>
     {/* Custom component similar to a View but with props for styling */}
     <Container flex={1} backgroundColor={theme.app.color.primary} alignItems={"center"} justifyContent={"center"}>
-        <StyledText bold f6 secondary center>Results Screen</StyledText>
+        <StyledText theme={theme} bold f6 primary center>Results Screen</StyledText>
     </Container>
     </>
   );

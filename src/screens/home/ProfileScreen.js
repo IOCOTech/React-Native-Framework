@@ -14,7 +14,7 @@ const ProfileScreen = ({navigation, theme}) => {
     <>
     {/* Custom component similar to a View but with props for styling */}
     <Container flex={1} backgroundColor={theme.app.color.primary} alignItems={"center"} justifyContent={"center"}>
-        <StyledText bold f6 secondary center>Profile Screen</StyledText>
+        <StyledText theme={theme} bold f6 primary center>Profile Screen</StyledText>
     </Container>
     </>
   );

@@ -28,13 +28,13 @@ const ShopStackScreen = ({navigation, theme}) => {
       height: 65
     },
     headerTitleStyle: {
-      color: theme.font.color.white,
+      color: theme.font.color.primary,
       fontSize: theme.font.size.f6
     },
     headerRightContainerStyle: {
       paddingRight: theme.spacing.f5
     },
-    headerTintColor: theme.app.color.white
+    headerTintColor: theme.icon.color.primary
   } 
 
     return (

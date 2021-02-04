@@ -7,12 +7,12 @@
 //  your needs as the project progress 
 //  *********************
 
-export default dark = {
+export default generic = {
     app: {
         color: {
-            primary: "#FDB833",
-            secondary: "#1B5F85",
-            accent: "#FDB833",
+            primary: "#0B2432",
+            secondary: "#353B3F",
+            accent: "#FFBF84",
             white: "#ffffff",
             offWhite: "#EFEFEF",
             grey: "#555555",
@@ -24,9 +24,9 @@ export default dark = {
     },
     font: {
         color: {
-            primary: "#27536B",
-            secondary: "#1B5F85",
-            accent: "#FDB833",
+            primary: "#ffffff",
+            secondary: "#000000",
+            accent: "#555555",
             white: "#ffffff",
             offWhite: "#EFEFEF",
             grey: "#555555",
@@ -83,9 +83,9 @@ export default dark = {
     },
     icon: {
         color: {
-            primary: "#27536B",
-            secondary: "#1B5F85",
-            accent: "#FDB833",
+            primary: "#ffffff",
+            secondary: "#000000",
+            accent: "#555555",
             white: "#ffffff",
             offWhite: "#EFEFEF",
             grey: "#555555",
@@ -110,9 +110,9 @@ export default dark = {
     },
     loader: {
         color: {
-            primary: "#27536B",
-            secondary: "#1B5F85",
-            accent: "#FDB833",
+            primary: "#ffffff",
+            secondary: "#000000",
+            accent: "#555555",
             white: "#ffffff",
             offWhite: "#EFEFEF",
             grey: "#555555",
@@ -136,6 +136,18 @@ export default dark = {
         }
     },
     border: {
+        color: {
+            primary: "#ffffff",
+            secondary: "#000000",
+            accent: "#555555",
+            white: "#ffffff",
+            offWhite: "#EFEFEF",
+            grey: "#555555",
+            black: "#000000",
+            error: "#D84545",
+            warning: "#D89D45",
+            success: "#74D845",
+        },
         radius: {
             f0 : 0,
             f1 : 2,

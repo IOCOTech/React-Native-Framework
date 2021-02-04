@@ -3,8 +3,6 @@ import React from 'react';
 import {AppRegistry} from 'react-native';
 // Custom Screens imports
 import App from './App';
-// Global styles
-import G from './styles/import_globals';
 // Config
 import {name as appName} from './app.json';
 // Redux

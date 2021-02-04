@@ -29,7 +29,7 @@ const AppTabs = ({navigation, theme}) => {
     },
     tabStyle: {},
     activeTintColor: theme.app.color.accent,
-    inactiveTintColor: theme.app.color.white,
+    inactiveTintColor: theme.icon.color.primary,
     showLabel: false,
     keyboardHidesTabBar: true
   }

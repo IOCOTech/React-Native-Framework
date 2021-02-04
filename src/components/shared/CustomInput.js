@@ -14,9 +14,9 @@ const CustomInput = ({
   const styles = {
     container: {
       borderWidth: 1,
-      borderColor: theme.app.color.white,
+      borderColor: theme.border.color.primary,
       paddingHorizontal: theme.spacing.f4,
-      borderRadius: theme.border.rauis.f4,
+      borderRadius: theme.border.radius.f4,
     }
   }
 
@@ -28,12 +28,12 @@ const CustomInput = ({
       inputContainerStyle={styles.container}
       placeholder={placeholder}
       placeholderTextColor={theme.app.color.offWhite}
-      color={theme.app.color.white}
+      color={theme.font.color.primary}
       leftIcon={
         <Icon
           name={iconName}
           size={theme.icon.size.f4}
-          color={theme.icon.color.white}
+          color={theme.icon.color.primary}
         />
       }
     />
