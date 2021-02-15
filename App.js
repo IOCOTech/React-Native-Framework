@@ -25,7 +25,7 @@ const App = ({auth ,checkAuth, setAppTheme}) => {
     setAppTheme(THEME.GENERIC);
 
     setTimeout(() => {
-      checkAuth(false)
+      checkAuth(true)
     }, 1000);
   },[]);
 
