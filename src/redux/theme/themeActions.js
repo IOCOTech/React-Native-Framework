@@ -3,7 +3,7 @@ import LOG_TYPE  from "../../constants/testConstants";
 // log
 import { good  } from "../../utils/testUtills";
 // theme
-import { appTheme } from "../../../styles/theme";
+import Theme from "../../../styles/theme";
 
 import {
   SET_APP_THEME,
@@ -19,7 +19,7 @@ const setAppThemeRequest = (payload) => {
 
 export const setAppTheme = (theme) => {
   return (dispatch) => {
-      let newTheme = appTheme(theme);
+      let newTheme = Theme.set(theme);
       dispatch(setAppThemeRequest(newTheme));
       good(LOG_TYPE.REDUX, `REDUX SUCCESSFUL ======> /state: theme/ /file: themeActions.js themeActions/`);
     }

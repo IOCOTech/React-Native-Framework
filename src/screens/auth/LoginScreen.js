@@ -4,7 +4,7 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
-  ScrollView
+  ScrollView,
 } from 'react-native';
 // Custom component imports
 import Container from "../../components/shared/Container";
@@ -14,10 +14,12 @@ import Spacer from "../../components/shared/Spacer";
 import CustomInput from "../../components/shared/CustomInput";
 // Constants
 import SCREENS from "../../constants/screenConstants";
+import THEME from "../../constants/themeConstants";
 // redux imports
 import {connect} from 'react-redux';
 
 const LoginScreen = ({navigation, theme}) => {
+
   return (
     <Container flex={1} backgroundColor={theme.app.color.primary}>
         <ScrollView 
@@ -55,23 +57,27 @@ const LoginScreen = ({navigation, theme}) => {
   );
 };
 
-// This object is used to style your components
-const styles = StyleSheet.create({
-  imageBg: {
-    flex: 1,
-    resizeMode: "cover"
-  },
-  logoImg: {
-    width: 140,
-    height: 60,
-    resizeMode: "contain"
-  }
-});
+  // This object is used to style your components
+  const styles = StyleSheet.create({
+    imageBg: {
+      flex: 1,
+      resizeMode: "cover",
+    },
+    logoImg: {
+      width: 140,
+      height: 60,
+      resizeMode: "contain",
+    },
+    box: {
+      width: 100,
+      height: 100,
+    }
+  });
 
 // Mapping the redux state to props
 const mapStateToProps = state => {
   return {
-    theme: state.theme
+    theme: state.theme,
   }
 }
 
