@@ -7,6 +7,8 @@
 //  your needs as the project progress 
 //  *********************
 
+// Generic theme
+
 export default generic = {
     app: {
         color: {
