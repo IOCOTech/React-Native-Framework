@@ -13,7 +13,8 @@ import SCREENS from "../../constants/screenConstants";
 // redux imports
 import {connect} from 'react-redux';
 
-const MoreScreen = ({navigation, theme}) => {
+const ShopScreen = ({navigation, theme}) => {
+
   return (
     <>
     {/* Custom component similar to a View but with props for styling */}
@@ -43,4 +44,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MoreScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(ShopScreen);

@@ -1,5 +1,5 @@
 // React imports
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   StyleSheet,
   Image,
@@ -19,8 +19,20 @@ import THEME from "../../constants/themeConstants";
 // redux imports
 import { setAppTheme } from "../../redux";
 import {connect} from 'react-redux';
+import Theme from "../../../styles/theme";
+import EventManager from "../../services/EventManager";
+
+// const theme = Theme.get()
 
 const HomeScreen = ({navigation, setAppTheme, theme}) => {
+
+  useEffect(()=>{
+    const themeSubscriber = EventManager.subscribe("Theme", themeData => {
+      console.log("Home wanna use theme: ", themeData)
+    })
+
+    return themeSubscriber
+  },[]);
 
   return (
     <Container paddingHorizontal={theme.spacing.f4} flex={1} backgroundColor={theme.app.color.primary}>

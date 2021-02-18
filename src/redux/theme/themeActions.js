@@ -4,6 +4,8 @@ import LOG_TYPE  from "../../constants/testConstants";
 import { good  } from "../../utils/testUtills";
 // theme
 import Theme from "../../../styles/theme";
+// Event
+import EventManager from "../../services/EventManager";
 
 import {
   SET_APP_THEME,
@@ -18,6 +20,7 @@ const setAppThemeRequest = (payload) => {
 }
 
 export const setAppTheme = (theme) => {
+  EventManager.publish("Theme", {theme: "ddd"})
   return (dispatch) => {
       let newTheme = Theme.set(theme);
       dispatch(setAppThemeRequest(newTheme));
