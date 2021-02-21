@@ -1,9 +1,9 @@
 // React imports
 import React, {useState} from 'react';
 // Constants
-import THEME from '../constants/themeConstants';
+import THEME from '../constants/ThemeConstants';
 // Theme
-import Theme from '../../styles/theme';
+import Theme from '../../styles/Theme';
 
 const ThemeContext = React.createContext();
 

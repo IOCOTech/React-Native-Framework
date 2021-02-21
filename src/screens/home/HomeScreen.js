@@ -11,8 +11,7 @@ import Button from '../../components/shared/Button';
 // Context
 import ThemeContext from '../../context/ThemeContext';
 // Constants
-import SCREENS from '../../constants/screenConstants';
-import THEME from '../../constants/themeConstants';
+import THEME from '../../constants/ThemeConstants';
 // redux imports
 import {connect} from 'react-redux';
 

@@ -1,5 +1,5 @@
 // Constant imports
-import LOG_TYPE from "../constants/testConstants";
+import LOG_TYPE from '../constants/TestConstants';
 
 // Local variables
 let testing = true;
@@ -15,19 +15,19 @@ let button_click = true;
 let swipe = true;
 let page_view = true;
 
-let FgRed = "\x1b[31m";
-let FgGreen = "\x1b[32m";
-let FgYellow = "\x1b[33m";
-let FgCyan = "\x1b[36m";
-let FgMagenta = "\u001b[35m";
+let FgRed = '\x1b[31m';
+let FgGreen = '\x1b[32m';
+let FgYellow = '\x1b[33m';
+let FgCyan = '\x1b[36m';
+let FgMagenta = '\u001b[35m';
 
-let BgBlue = "\u001b[44;1m";
-let BgMagenta = "\u001b[45;1m";
-let BgCyan = "\u001b[46;1m";
-let BgBlack = "\u001b[40m";
+let BgBlue = '\u001b[44;1m';
+let BgMagenta = '\u001b[45;1m';
+let BgCyan = '\u001b[46;1m';
+let BgBlack = '\u001b[40m';
 
 // Local functions
-const screenLoaded = (type = LOG_TYPE.SCREEN, msg = "", from = "") => {
+const screenLoaded = (type = LOG_TYPE.SCREEN, msg = '', from = '') => {
   if (testing) {
     if (screen && type == LOG_TYPE.SCREEN) {
       console.log(`${type}`, `${JSON.stringify(msg)}`, `${from}`);
@@ -35,7 +35,7 @@ const screenLoaded = (type = LOG_TYPE.SCREEN, msg = "", from = "") => {
   }
 };
 
-const good = (type = LOG_TYPE.LOG, msg = "", from = "") => {
+const good = (type = LOG_TYPE.LOG, msg = '', from = '') => {
   if (testing) {
     if (api && type == LOG_TYPE.API) {
       console.log(`Successful ${type}`, `${JSON.stringify(msg)}`, `${from}`);
@@ -58,7 +58,7 @@ const good = (type = LOG_TYPE.LOG, msg = "", from = "") => {
   }
 };
 
-const warn = (type = LOG_TYPE.LOG, msg = "", from = "") => {
+const warn = (type = LOG_TYPE.LOG, msg = '', from = '') => {
   if (testing) {
     if (api && type == LOG_TYPE.API) {
       console.log(`Warn ${type}`, `${JSON.stringify(msg)}`, `${from}`);
@@ -81,7 +81,7 @@ const warn = (type = LOG_TYPE.LOG, msg = "", from = "") => {
   }
 };
 
-const bad = (type = LOG_TYPE.LOG, msg = "", from = "") => {
+const bad = (type = LOG_TYPE.LOG, msg = '', from = '') => {
   if (testing) {
     if (api && type == LOG_TYPE.API) {
       console.log(`! FAILED ! ${type}`, `${JSON.stringify(msg)}`, `${from}`);
@@ -104,5 +104,4 @@ const bad = (type = LOG_TYPE.LOG, msg = "", from = "") => {
   }
 };
 
-
-export { good, warn, bad, screenLoaded };
+export {good, warn, bad, screenLoaded};
