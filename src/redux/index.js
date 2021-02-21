@@ -1,7 +1,3 @@
-import { add, remove } from "./counter/counterActions";
-import { checkAuth } from "./auth/authActions";
-export {
-    add, 
-    remove,
-    checkAuth
-}
+import {add, remove} from './counter/CounterActions';
+import {checkAuth} from './auth/AuthActions';
+export {add, remove, checkAuth};

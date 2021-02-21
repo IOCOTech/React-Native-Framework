@@ -1,50 +1,49 @@
 // React imports
-import React from 'react';
-import {
-  StyleSheet,
-  ImageBackground,
-  Image
-} from 'react-native';
+import React, {useContext} from 'react';
+import {StyleSheet, Image} from 'react-native';
 // Custom component imports
-import Container from "../../components/shared/Container";
-import StyledText from '../../components/shared/StyledText';
-import Spacer from "../../components/shared/Spacer";
-// Global style sheet imports
-import G from "../../../styles/import_globals";
+import Container from '../../components/shared/Container';
 // redux imports
 import {connect} from 'react-redux';
+// Context
+import ThemeContext from '../../context/ThemeContext';
 
 const SplashScreen = ({navigation}) => {
+  const {theme} = useContext(ThemeContext);
+  const styles = localStyles(theme);
   return (
-      <Container flex={1} backgroundColor={G.theme.app.primary} alignItems={"center"} justifyContent={"center"} padding={G.spacing.f5}>
-          <Image style={styles.logoImg} source={G.image_urls.logo}/>
-      </Container>
+    <Container
+      flex={1}
+      backgroundColor={theme.app.color.primary}
+      alignItems={'center'}
+      justifyContent={'center'}>
+      <Image style={styles.logoImg} source={theme.image.logo} />
+    </Container>
   );
 };
 
 // This object is used to style your components
-const styles = StyleSheet.create({
-  imageBg: {
-    flex: 1,
-    resizeMode: "cover",
-  },
-  logoImg: {
-    width: 100,
-    height: 60,
-    resizeMode: "contain",
-  }
-});
+const localStyles = (theme) =>
+  StyleSheet.create({
+    imageBg: {
+      flex: 1,
+      resizeMode: 'cover',
+    },
+    logoImg: {
+      width: 100,
+      height: 60,
+      resizeMode: 'contain',
+    },
+  });
 
 // Mapping the redux state to props
-const mapStateToProps = state => {
-  return {
-  }
-}
+const mapStateToProps = (state) => {
+  return {};
+};
 
 // Mapping the redux actions to props
 const mapDispatchToProps = (dispatch) => {
-  return {
-  }
-}
+  return {};
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SplashScreen);

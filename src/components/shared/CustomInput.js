@@ -1,31 +1,30 @@
 // React imports
-import React from "react";
-import { StyleSheet } from "react-native";
+import React, {useContext} from 'react';
+import {StyleSheet} from 'react-native';
+// Context
+import ThemeContext from '../../context/ThemeContext';
 // Elements
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { Input } from 'react-native-elements';
-// Global imports
-import G from "../../../styles/import_globals";
+import {Input} from 'react-native-elements';
 
-const CustomInput = ({ 
-  placeholder,
-  iconName,
-  onChangeText, 
-   }) => {
+const CustomInput = ({placeholder, iconName, onChangeText}) => {
+  const {theme} = useContext(ThemeContext);
+  const styles = localStyles(theme);
+
   return (
     // Component start
-      <Input
+    <Input
       onChangeText={onChangeText}
       containerStyle={{paddingHorizontal: 0}}
       inputContainerStyle={styles.container}
       placeholder={placeholder}
-      placeholderTextColor={G.theme.app.offWhite}
-      color={G.theme.app.white}
+      placeholderTextColor={theme.app.color.offWhite}
+      color={theme.font.color.primary}
       leftIcon={
         <Icon
           name={iconName}
-          size={G.icon_size.f4}
-          color={G.theme.icon.white}
+          size={theme.icon.size.f4}
+          color={theme.icon.color.primary}
         />
       }
     />
@@ -33,14 +32,15 @@ const CustomInput = ({
   );
 };
 
-// custom styles for this element
-const styles = StyleSheet.create({
-  container: {
-    borderWidth: 1,
-    borderColor: G.theme.app.white,
-    paddingHorizontal: G.spacing.f4,
-    borderRadius: G.radius_size.f4,
-  }
-});
+// This object is used to style your components
+const localStyles = (theme) =>
+  StyleSheet.create({
+    container: {
+      borderWidth: 1,
+      borderColor: theme.border.color.primary,
+      paddingHorizontal: theme.spacing.f4,
+      borderRadius: theme.border.radius.f4,
+    },
+  });
 
 export default CustomInput;

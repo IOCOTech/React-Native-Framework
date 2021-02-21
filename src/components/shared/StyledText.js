@@ -1,50 +1,81 @@
 // React imports
-import React from "react";
-import { Text, StyleSheet } from "react-native";
-// Global imports
-import G from "../../../styles/import_globals";
+import React, {useContext} from 'react';
+import {Text} from 'react-native';
+// Context
+import ThemeContext from '../../context/ThemeContext';
 
+const StyledText = ({
+  style,
+  children,
+  f0,
+  f1,
+  f2,
+  f3,
+  f4,
+  f5,
+  f6,
+  f7,
+  f8,
+  f9,
+  f10,
+  success,
+  warning,
+  error,
+  black,
+  white,
+  offWhite,
+  accent,
+  grey,
+  secondary,
+  primary,
+  bold,
+  medium,
+  regular,
+  thin,
+  center,
+  right,
+  italic,
+}) => {
+  const {theme} = useContext(ThemeContext);
 
-const StyledText = props => {
   return (
     // Component start
-    <Text style={[
-      props.f0 ? { fontSize: G.font_size.f0} : null,
-      props.f1 ? { fontSize: G.font_size.f1} : null,
-      props.f2 ? { fontSize: G.font_size.f2} : null,
-      props.f3 ? { fontSize: G.font_size.f3} : null,
-      props.f4 ? { fontSize: G.font_size.f4} : null,
-      props.f5 ? { fontSize: G.font_size.f5} : null,
-      props.f6 ? { fontSize: G.font_size.f6} : null,
-      props.f7 ? { fontSize: G.font_size.f7} : null,
-      props.f8 ? { fontSize: G.font_size.f8} : null,
-      props.f9 ? { fontSize: G.font_size.f9} : null,
-      props.f10 ? { fontSize: G.font_size.f10} : null,
-      props.success ? { color: G.theme.font.success } : null,
-      props.warning ? { color: G.theme.font.warning } : null,
-      props.error ? { color: G.theme.font.error } : null,
-      props.black ? { color: G.theme.font.black } : null,
-      props.white ? { color: G.theme.font.white } : null,
-      props.accent ? { color: G.theme.font.accent } : null,
-      props.grey ? { color: G.theme.font.grey } : null,
-      props.offWhite ? { color: G.theme.font.offWhite } : null,
-      props.secondary ? { color: G.theme.font.secondary } : null,
-      props.primary ? { color: G.theme.font.primary } : null,
-      props.bold ? { fontFamily: G.font_family.bold } : null,
-      props.medium ? { fontFamily: G.font_family.medium } : null,
-      props.regular ? { fontFamily: G.font_family.regular } : null,
-      props.thin ? { fontFamily: G.font_family.thin } : null,
-      props.center ? { textAlign: "center" } : null,
-      props.right ? { textAlign: "right" } : null,
-      props.italic ? { fontStyle: "italic" } : null,
-      { ...props.style }
-    ]}>
-      {props.children}
+    <Text
+      style={[
+        f0 ? {fontSize: theme.font.size.f0} : null,
+        f1 ? {fontSize: theme.font.size.f1} : null,
+        f2 ? {fontSize: theme.font.size.f2} : null,
+        f3 ? {fontSize: theme.font.size.f3} : null,
+        f4 ? {fontSize: theme.font.size.f4} : null,
+        f5 ? {fontSize: theme.font.size.f5} : null,
+        f6 ? {fontSize: theme.font.size.f6} : null,
+        f7 ? {fontSize: theme.font.size.f7} : null,
+        f8 ? {fontSize: theme.font.size.f8} : null,
+        f9 ? {fontSize: theme.font.size.f9} : null,
+        f10 ? {fontSize: theme.font.size.f10} : null,
+        success ? {color: theme.font.color.success} : null,
+        warning ? {color: theme.font.color.warning} : null,
+        error ? {color: theme.font.color.error} : null,
+        black ? {color: theme.font.color.black} : null,
+        white ? {color: theme.font.color.white} : null,
+        accent ? {color: theme.font.color.accent} : null,
+        grey ? {color: theme.font.color.grey} : null,
+        offWhite ? {color: theme.font.color.offWhite} : null,
+        secondary ? {color: theme.font.color.secondary} : null,
+        primary ? {color: theme.font.color.primary} : null,
+        bold ? {fontFamily: theme.font.family.bold} : null,
+        medium ? {fontFamily: theme.font.family.medium} : null,
+        regular ? {fontFamily: theme.font.family.regular} : null,
+        thin ? {fontFamily: theme.font.family.thin} : null,
+        center ? {textAlign: 'center'} : null,
+        right ? {textAlign: 'right'} : null,
+        italic ? {fontStyle: 'italic'} : null,
+        {...style},
+      ]}>
+      {children}
     </Text>
     // Component end
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default StyledText;
