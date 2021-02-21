@@ -1,5 +1,5 @@
 // React imports
-import React, {useEffect} from 'react';
+import React, {useEffect, useContext} from 'react';
 import {SafeAreaView, StyleSheet, StatusBar} from 'react-native';
 // Custom Screens imports
 import SplashScreen from './src/screens/splash/SplashScreen';
@@ -12,8 +12,13 @@ import {NavigationContainer} from '@react-navigation/native';
 import AuthStackScreen from './src/navigation/AuthStackScreen';
 // Navigation Tabs
 import AppTabs from './src/navigation/AppTabs';
+// Context
+import ThemeContext from './src/context/ThemeContext';
 
 const App = ({auth, checkAuth}) => {
+  const {theme} = useContext(ThemeContext);
+  const styles = localStyles(theme);
+
   useEffect(() => {
     setTimeout(() => {
       // true or false to see the login screen
@@ -45,11 +50,12 @@ const App = ({auth, checkAuth}) => {
 };
 
 // This object is used to style your components
-const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-  },
-});
+const localStyles = (theme) =>
+  StyleSheet.create({
+    safeArea: {
+      flex: 1,
+    },
+  });
 
 // Mapping the redux state to props
 const mapStateToProps = (state) => {

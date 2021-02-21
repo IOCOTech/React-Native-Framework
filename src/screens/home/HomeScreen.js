@@ -26,145 +26,126 @@ const HomeScreen = ({navigation}) => {
       flex={1}
       backgroundColor={theme.app.color.primary}>
       <ScrollView style={{flexGrow: 1}} showsVerticalScrollIndicator={false}>
-        <Spacer theme={theme} small />
+        <Spacer small />
+        <Button title={'light theme'} action={() => switchTheme(THEME.LIGHT)} />
+        <Spacer small />
         <Button
-          theme={theme}
-          title={'light theme'}
-          action={() => switchTheme(THEME.LIGHT)}
-        />
-        <Spacer theme={theme} small />
-        <Button
-          theme={theme}
           title={'generic theme'}
           action={() => switchTheme(THEME.GENERIC)}
         />
-        <Spacer theme={theme} small />
-        <Button
-          theme={theme}
-          title={'dark theme'}
-          action={() => switchTheme(THEME.DARK)}
-        />
-        <Spacer theme={theme} medium />
+        <Spacer small />
+        <Button title={'dark theme'} action={() => switchTheme(THEME.DARK)} />
+        <Spacer medium />
         <Text style={styles.lableStyle}>Font Family</Text>
-        <Spacer theme={theme} small />
-        <StyledText theme={theme} style={{fontSize: 18}} primary bold>
+        <Spacer small />
+        <StyledText style={{fontSize: 18}} primary bold>
           bold
         </StyledText>
-        <StyledText theme={theme} style={{fontSize: 18}} primary medium>
+        <StyledText style={{fontSize: 18}} primary medium>
           medium
         </StyledText>
-        <StyledText theme={theme} style={{fontSize: 18}} primary regular>
+        <StyledText style={{fontSize: 18}} primary regular>
           regular
         </StyledText>
-        <StyledText theme={theme} style={{fontSize: 18}} primary thin>
+        <StyledText style={{fontSize: 18}} primary thin>
           thin
         </StyledText>
-        <Spacer theme={theme} large />
+        <Spacer large />
         <Text style={styles.lableStyle}>Font Size</Text>
-        <Spacer theme={theme} small />
-        <StyledText theme={theme} f10 primary medium>
+        <Spacer small />
+        <StyledText f10 primary medium>
           f10 Size ({theme.font.size.f10})
         </StyledText>
-        <StyledText theme={theme} f9 primary medium>
+        <StyledText f9 primary medium>
           f9 Size ({theme.font.size.f9})
         </StyledText>
-        <StyledText theme={theme} f8 primary medium>
+        <StyledText f8 primary medium>
           f8 Size ({theme.font.size.f8})
         </StyledText>
-        <StyledText theme={theme} f7 primary medium>
+        <StyledText f7 primary medium>
           f7 Size ({theme.font.size.f7})
         </StyledText>
-        <StyledText theme={theme} f6 primary medium>
+        <StyledText f6 primary medium>
           f6 Size ({theme.font.size.f6})
         </StyledText>
-        <StyledText theme={theme} f5 primary medium>
+        <StyledText f5 primary medium>
           f5 Size ({theme.font.size.f5})
         </StyledText>
-        <StyledText theme={theme} f4 primary medium>
+        <StyledText f4 primary medium>
           f4 Size ({theme.font.size.f4})
         </StyledText>
-        <StyledText theme={theme} f3 primary medium>
+        <StyledText f3 primary medium>
           f3 Size ({theme.font.size.f3})
         </StyledText>
-        <StyledText theme={theme} f2 primary medium>
+        <StyledText f2 primary medium>
           f2 Size ({theme.font.size.f2})
         </StyledText>
-        <StyledText theme={theme} f1 primary medium>
+        <StyledText f1 primary medium>
           f1 Size ({theme.font.size.f1})
         </StyledText>
-        <Spacer theme={theme} large />
+        <Spacer large />
         <Text style={styles.lableStyle}>Font color</Text>
-        <Spacer theme={theme} small />
+        <Spacer small />
         <Container flexDirection={'row'} justifyContent={'space-between'}>
           <Container flex={1}>
             <StyledText
-              theme={theme}
               style={{backgroundColor: theme.app.color.white, fontSize: 16}}
               primary
               medium>
               primary ({theme.font.color.primary})
             </StyledText>
             <StyledText
-              theme={theme}
               style={{backgroundColor: theme.app.color.white, fontSize: 16}}
               secondary
               medium>
               secondary ({theme.font.color.secondary})
             </StyledText>
             <StyledText
-              theme={theme}
               style={{backgroundColor: theme.app.color.white, fontSize: 16}}
               grey
               medium>
               grey ({theme.font.color.grey})
             </StyledText>
             <StyledText
-              theme={theme}
               style={{backgroundColor: theme.app.color.white, fontSize: 16}}
               accent
               medium>
               accent ({theme.font.color.accent})
             </StyledText>
             <StyledText
-              theme={theme}
               style={{backgroundColor: theme.app.color.accent, fontSize: 16}}
               offWhite
               medium>
               offWhite ({theme.font.color.offWhite})
             </StyledText>
           </Container>
-          <Spacer theme={theme} medium />
+          <Spacer medium />
           <Container flex={1}>
             <StyledText
-              theme={theme}
               style={{backgroundColor: theme.app.color.accent, fontSize: 16}}
               white
               medium>
               white ({theme.font.color.white})
             </StyledText>
             <StyledText
-              theme={theme}
               style={{backgroundColor: theme.app.color.white, fontSize: 16}}
               black
               medium>
               black ({theme.font.color.black})
             </StyledText>
             <StyledText
-              theme={theme}
               style={{backgroundColor: theme.app.color.white, fontSize: 16}}
               error
               medium>
               error ({theme.font.color.error})
             </StyledText>
             <StyledText
-              theme={theme}
               style={{backgroundColor: theme.app.color.white, fontSize: 16}}
               success
               medium>
               success ({theme.font.color.success})
             </StyledText>
             <StyledText
-              theme={theme}
               style={{backgroundColor: theme.app.color.white, fontSize: 16}}
               warning
               medium>
@@ -172,15 +153,15 @@ const HomeScreen = ({navigation}) => {
             </StyledText>
           </Container>
         </Container>
-        <Spacer theme={theme} large />
+        <Spacer large />
         <Text style={styles.lableStyle}>StyledText component use</Text>
-        <Spacer theme={theme} small />
-        <StyledText theme={theme} f6 success bold>
+        <Spacer small />
+        <StyledText f6 success bold>
           f6 success bold
         </StyledText>
-        <Spacer theme={theme} large />
+        <Spacer large />
         <Text style={styles.lableStyle}>Icon Size</Text>
-        <Spacer theme={theme} small />
+        <Spacer small />
         <Container
           flexDirection={'row'}
           justifyContent={'space-between'}
@@ -231,7 +212,7 @@ const HomeScreen = ({navigation}) => {
             </Text>
           </Container>
         </Container>
-        <Spacer theme={theme} medium />
+        <Spacer medium />
         <Container
           flexDirection={'row'}
           justifyContent={'space-between'}
@@ -282,7 +263,7 @@ const HomeScreen = ({navigation}) => {
             </Text>
           </Container>
         </Container>
-        <Spacer theme={theme} medium />
+        <Spacer medium />
         <Container
           flexDirection={'row'}
           justifyContent={'space-between'}
@@ -333,7 +314,7 @@ const HomeScreen = ({navigation}) => {
             </Text>
           </Container>
         </Container>
-        <Spacer theme={theme} medium />
+        <Spacer medium />
         <Container
           flexDirection={'row'}
           justifyContent={'space-between'}
@@ -354,11 +335,11 @@ const HomeScreen = ({navigation}) => {
             </Text>
           </Container>
         </Container>
-        <Spacer theme={theme} large />
+        <Spacer large />
         <Text style={styles.lableStyle}>
           Theme app colors (theme.app.color.primary)
         </Text>
-        <Spacer theme={theme} small />
+        <Spacer small />
         <Container
           containerStyles={{
             borderColor: theme.border.color.primary,
@@ -479,11 +460,11 @@ const HomeScreen = ({navigation}) => {
           marginTop={5}>
           <Text style={{fontSize: 18, color: 'white'}}>error</Text>
         </Container>
-        <Spacer theme={theme} large />
+        <Spacer large />
         <Text style={styles.lableStyle}>
           Radius size (theme.border.radius.f1)
         </Text>
-        <Spacer theme={theme} medium />
+        <Spacer medium />
         <Container
           flexDirection={'row'}
           justifyContent={'space-between'}
@@ -534,7 +515,7 @@ const HomeScreen = ({navigation}) => {
             </Text>
           </Container>
         </Container>
-        <Spacer theme={theme} medium />
+        <Spacer medium />
         <Container
           flexDirection={'row'}
           justifyContent={'space-between'}
@@ -585,7 +566,7 @@ const HomeScreen = ({navigation}) => {
             </Text>
           </Container>
         </Container>
-        <Spacer theme={theme} medium />
+        <Spacer medium />
         <Container
           flexDirection={'row'}
           justifyContent={'space-between'}
@@ -636,7 +617,7 @@ const HomeScreen = ({navigation}) => {
             </Text>
           </Container>
         </Container>
-        <Spacer theme={theme} medium />
+        <Spacer medium />
         <Container
           flexDirection={'row'}
           justifyContent={'space-between'}
@@ -657,7 +638,7 @@ const HomeScreen = ({navigation}) => {
             </Text>
           </Container>
         </Container>
-        <Spacer theme={theme} large />
+        <Spacer large />
       </ScrollView>
     </Container>
   );

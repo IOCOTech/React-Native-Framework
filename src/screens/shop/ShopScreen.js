@@ -25,12 +25,11 @@ const ShopScreen = ({navigation}) => {
         backgroundColor={theme.app.color.primary}
         alignItems={'center'}
         justifyContent={'center'}>
-        <StyledText theme={theme} bold f6 primary center>
+        <StyledText bold f6 primary center>
           Shop Screen
         </StyledText>
-        <Spacer theme={theme} medium />
+        <Spacer medium />
         <Button
-          theme={theme}
           title={'Product'}
           action={() => navigation.push(SCREENS.PRODUCT)}
         />
@@ -40,7 +39,7 @@ const ShopScreen = ({navigation}) => {
 };
 
 // This object is used to style your components
-const styles = StyleSheet.create({});
+const localStyles = (theme) => StyleSheet.create({});
 
 // Mapping the redux state to props
 const mapStateToProps = (state) => {

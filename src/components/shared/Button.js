@@ -43,7 +43,7 @@ const Button = ({loading, testID, title, action = () => {}, disabled}) => {
               ? {backgroundColor: theme.app.color.grey, borderWidth: 0}
               : null,
           ]}>
-          <StyledText theme={theme} f5 primary regular>
+          <StyledText f5 primary regular>
             {title.toUpperCase()}
           </StyledText>
         </View>

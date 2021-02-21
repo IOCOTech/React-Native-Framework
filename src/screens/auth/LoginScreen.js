@@ -37,13 +37,11 @@ const LoginScreen = ({navigation}) => {
           alignItems={'center'}
           justifyContent={'center'}>
           <CustomInput
-            theme={theme}
             placeholder={'Username'}
             iconName={'user'}
             onChangeText={(text) => console.log(text)}
           />
           <CustomInput
-            theme={theme}
             placeholder={'Password'}
             iconName={'lock'}
             onChangeText={(text) => console.log(text)}
@@ -52,13 +50,13 @@ const LoginScreen = ({navigation}) => {
       </ScrollView>
 
       <Container padding={theme.spacing.f5}>
-        <Button theme={theme} title={'Login'} />
-        <Spacer theme={theme} medium />
+        <Button title={'Login'} />
+        <Spacer medium />
         <TouchableOpacity
           onPress={() => {
             navigation.push(SCREENS.SIGN_UP);
           }}>
-          <StyledText theme={theme} regular f5 white center>
+          <StyledText regular f5 white center>
             Sign up for an account
           </StyledText>
         </TouchableOpacity>

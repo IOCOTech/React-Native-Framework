@@ -20,7 +20,7 @@ const SignUpScreen = ({navigation}) => {
         backgroundColor={theme.app.color.primary}
         alignItems={'center'}
         justifyContent={'center'}>
-        <StyledText theme={theme} bold f6 primary center>
+        <StyledText bold f6 primary center>
           Sign up Screen
         </StyledText>
       </Container>
