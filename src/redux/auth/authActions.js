@@ -1,7 +1,7 @@
 // constants
 import LOG_TYPE from '../../constants/TestConstants';
 // log
-import {good, bad} from '../../utils/testUtills';
+import {good, bad} from '../../utils/TestUtils';
 
 import {
   CHECK_AUTH_REQUEST,

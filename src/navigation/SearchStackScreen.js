@@ -8,7 +8,7 @@ import ResultsScreen from '../screens/search/ResultsScreen';
 // Context
 import ThemeContext from '../context/ThemeContext';
 // Constants
-import SCREENS from '../constants/screenConstants';
+import SCREENS from '../constants/ScreenConstants';
 // redux imports
 import {connect} from 'react-redux';
 

@@ -11,7 +11,7 @@ import SearchStackScreen from './SearchStackScreen';
 // Context
 import ThemeContext from '../context/ThemeContext';
 // Constants
-import SCREENS from '../constants/screenConstants';
+import SCREENS from '../constants/ScreenConstants';
 // redux imports
 import {connect} from 'react-redux';
 

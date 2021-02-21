@@ -9,8 +9,7 @@ import Spacer from '../../components/shared/Spacer';
 // Context
 import ThemeContext from '../../context/ThemeContext';
 // Constants
-import SCREENS from '../../constants/screenConstants';
-import THEME from '../../constants/themeConstants';
+import SCREENS from '../../constants/ScreenConstants';
 // redux imports
 import {connect} from 'react-redux';
 

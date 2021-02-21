@@ -7,7 +7,7 @@ import StyledText from '../../components/shared/StyledText';
 import Button from '../../components/shared/Button';
 import Spacer from '../../components/shared/Spacer';
 // Constants
-import SCREENS from '../../constants/screenConstants';
+import SCREENS from '../../constants/ScreenConstants';
 // redux imports
 import {connect} from 'react-redux';
 // Context

@@ -8,7 +8,7 @@ import {ThemeProvider} from './src/context/ThemeContext';
 // Config
 import {name as appName} from './app.json';
 // Redux
-import store from './src/redux/store';
+import store from './src/redux/Store';
 import {Provider} from 'react-redux';
 
 const NewAPP = () => {

@@ -1,7 +1,7 @@
 // constants
 import LOG_TYPE from '../../constants/TestConstants';
 // log
-import {good, bad} from '../../utils/testUtills';
+import {good, bad} from '../../utils/TestUtils';
 
 import {ADD_TO_COUNT, REMOVE_FROM_COUNT} from './CounterTypes';
 
