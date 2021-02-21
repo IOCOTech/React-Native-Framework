@@ -1,43 +1,35 @@
 // React imports
 import React, {useEffect} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  StatusBar,
-} from 'react-native';
+import {SafeAreaView, StyleSheet, StatusBar} from 'react-native';
 // Custom Screens imports
-import SplashScreen from "./src/screens/splash/SplashScreen";
+import SplashScreen from './src/screens/splash/SplashScreen';
 // redux imports
-import { checkAuth, setAppTheme } from "./src/redux";
+import {checkAuth} from './src/redux';
 import {connect} from 'react-redux';
-// constants
-import THEME from "./src/constants/themeConstants";
 // Navigation
-import { NavigationContainer } from "@react-navigation/native";
+import {NavigationContainer} from '@react-navigation/native';
 // Navigation Stacks
-import AuthStackScreen from "./src/navigation/AuthStackScreen";
+import AuthStackScreen from './src/navigation/AuthStackScreen';
 // Navigation Tabs
-import AppTabs from "./src/navigation/AppTabs";
+import AppTabs from './src/navigation/AppTabs';
 
-const App = ({auth ,checkAuth, setAppTheme}) => {
-
+const App = ({auth, checkAuth}) => {
   useEffect(() => {
-    setAppTheme(THEME.GENERIC);
-
     setTimeout(() => {
-      checkAuth(true)
+      // true or false to see the login screen
+      checkAuth(true);
     }, 1000);
-  },[]);
+  }, []);
 
-  if(auth.loading) {
+  if (auth.loading) {
     return (
       <>
         <StatusBar barStyle="default" />
         <SafeAreaView style={styles.safeArea}>
-          <SplashScreen/>
+          <SplashScreen />
         </SafeAreaView>
       </>
-    )
+    );
   }
 
   return (
@@ -45,11 +37,7 @@ const App = ({auth ,checkAuth, setAppTheme}) => {
       <StatusBar barStyle="default" />
       <SafeAreaView style={styles.safeArea}>
         <NavigationContainer>
-          {auth.token ? 
-            <AppTabs/>
-            :
-            <AuthStackScreen />
-          }
+          {auth.token ? <AppTabs /> : <AuthStackScreen />}
         </NavigationContainer>
       </SafeAreaView>
     </>
@@ -59,23 +47,22 @@ const App = ({auth ,checkAuth, setAppTheme}) => {
 // This object is used to style your components
 const styles = StyleSheet.create({
   safeArea: {
-    flex: 1
-  }
+    flex: 1,
+  },
 });
 
 // Mapping the redux state to props
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     auth: state.auth,
-  }
-}
+  };
+};
 
 // Mapping the redux actions to props
 const mapDispatchToProps = (dispatch) => {
   return {
-    checkAuth: success => dispatch(checkAuth(success)),
-    setAppTheme: theme => dispatch(setAppTheme(theme))
-  }
-}
+    checkAuth: (success) => dispatch(checkAuth(success)),
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

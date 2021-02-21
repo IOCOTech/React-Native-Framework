@@ -1,17 +1,11 @@
 // React imports
-import React from "react";
-import { View } from "react-native";
+import React, {useContext} from 'react';
+import {View} from 'react-native';
+// Context
+import ThemeContext from '../../context/ThemeContext';
 
-const Spacer = ({
-  xxsmall,
-  xsmall,
-  small,
-  medium,
-  large,
-  xlarge,
-  xxlarge,
-  theme
-}) => {
+const Spacer = ({xxsmall, xsmall, small, medium, large, xlarge, xxlarge}) => {
+  const {theme} = useContext(ThemeContext);
   // Local functions
   let space = theme.spacing.f4;
 
@@ -40,10 +34,9 @@ const Spacer = ({
 
   return (
     // Component start
-    <View style={{ height: space, width: space }}></View>
+    <View style={{height: space, width: space}}></View>
     // Component end
   );
 };
-
 
 export default Spacer;

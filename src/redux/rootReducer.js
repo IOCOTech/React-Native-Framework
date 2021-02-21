@@ -1,10 +1,8 @@
 import {combineReducers} from 'redux';
 import counterReducer from './counter/counterReducer';
-import authReducer from "./auth/authReducer";
-import themeReducer from "./theme/themeReducer";
+import authReducer from './auth/authReducer';
 
 export default combineReducers({
-    theme: themeReducer,
-    auth: authReducer,
-    counter: counterReducer,
-  });
+  auth: authReducer,
+  counter: counterReducer,
+});
