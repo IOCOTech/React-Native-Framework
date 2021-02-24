@@ -12,7 +12,7 @@ const themes = {
 };
 
 const Theme = (() => {
-  let currentTheme = themes[THEME.DARK];
+  let currentTheme = themes[THEME.GENERIC];
 
   return {
     set: (theme) => {
