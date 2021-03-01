@@ -18,19 +18,6 @@ import SmartStyle from '../../utils/SmartStyle';
 const ShopScreen = ({navigation}) => {
   const {theme} = useContext(ThemeContext);
 
-  const SM = new SmartStyle({theme: theme});
-
-  SM.create(
-    'viewStyles',
-    'Before we start lets give a row flexDirection make a 90% width give the box a white backgroundColor and add 23 padding as well as a 10 borderRadius please add a 3 borderWidth and make a orange borderColor lastly add a 10 marginVertical so center alignItem and space-between justifyContent',
-  );
-  SM.create(
-    'textStyle',
-    'Make text a blue color but I need a 10 fontSize add 8 margin',
-  );
-
-  console.log(SM.styles);
-
   return (
     <>
       {/* Custom component similar to a View but with props for styling */}
@@ -39,11 +26,6 @@ const ShopScreen = ({navigation}) => {
         backgroundColor={theme.app.color.primary}
         alignItems={'center'}
         justifyContent={'center'}>
-        <View style={SM.styles.viewStyles}>
-          <Text style={SM.styles.textStyle}>Example</Text>
-          <Text style={SM.styles.textStyle}>Example</Text>
-          <Text style={SM.styles.textStyle}>Example</Text>
-        </View>
         <StyledText bold f6 primary center>
           Shop Screen
         </StyledText>
