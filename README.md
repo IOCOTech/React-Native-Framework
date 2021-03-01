@@ -75,50 +75,215 @@ https://reactnavigation.org/docs/getting-started
 https://reactnativeelements.com
 
 ### Coding conventions
+#### Naming Conventions
+- Variable and function names are written in `camelCase`
+```javascript
+const newVariable ✅
+const new_variable ❌
+const newvariable ❌
+```
+- Global constants written in `UPPERCASE` with underscores
+```javascript
+const NEW_CONSTANT ✅
+const NEWCONSTANT ❌
+```
+- Components and Classes are capitalised and written in `camelCase`
+```javascript
+class NewClass ✅
+class newClass ❌
 
-- Variable and function names written as camelCase
-- Global constants written in UPPERCASE with underscores
+const NewComponent = () => {...} ✅
+const newComponent = () => {...} ❌
+```
+- The folder names for Components and Classes follow the above naming convention
 - Always put spaces around operators ( = + - \* / ), and after commas
+```javascript
+const sum = a + b ✅
+const sum = a+b ❌
+```
 - Always end a simple statement with a semicolon.
+```javascript
+const someStatement = x + y; ✅
+const someStatment = x + y ❌
+```
+_You can always use a tool like [Prettier](https://prettier.io) to format your code and add semicolons automatically on every save_
+
+### Patterns to avoid
+*A list of some patterns and practices to avoid in your code 💩*
+#### Poor variable naming
+```javascript
+const od; ❌
+const overdueDays; ✅
+
+const objectModel; ❌
+const customerModel; ✅
+
+const arr1; ❌
+const booksArray; ✅
+```
+- Variable names must be clean and intention revealing
+- Name your variables, methods and classes in such a way that any person reading your code does not have to look elsewhere in your code to understand what is going on – the variable should best describe what is going on
+- Avoid "noisy names"
+```javascript
+const theClient; ❌
+const client; ✅
+
+const listOfApprovedClients; ❌
+const approvedClients; ✅
+```
+#### Poor function signatures
+```javascript
+function stringToNumber(string) {
+    return string
+} ❌
+function stringToNumber(string) {
+    return parseInt(string)
+} ✅
+```
+- Keep consistent function signatures (i.e. Your functions must do or return what the name says it must do or return)
+#### Long Parameter List
+- Avoid having too many parameters on your functions
+- The more parameters you have for a function, the more difficult it is to understand the function and its intention
+#### Variable Declaration
+- Declare all of your variables at the top of your file, function or class
+- Do not declare your variables all over your code – it becomes difficult to track all the variables pertaining to a given file or function
+#### Nested Conditionals
+```javascript
+if(condition1) {
+    if(condition2) {
+       // do something 
+    } else if(condition3) {
+        if(condition4) {
+            // do something
+        }
+    } else {
+        // do something
+    }
+} else {
+    // do something
+}
+```
+- The above code is not very readable 💩 – avoid writing deeply nested conditionals
+- Nested conditionals make code difficult to read, understand, change and test
+- A higher number of nested conditionals means more execution tasks which ultimately leads to a need for various combinations of values in order to test a function
+- You can simplify nested conditionals (see the following example):
+```javascript
+❌ No
+if (person.age > 18) 
+    canDrink = true;
+else 
+    canDrink = false;
+------------------------------
+✅ Yes
+canDrink = person.age > 50 
+```
+- In the above example, instead of making use of a conditional, we simply set the variable `canDrink` to the result of the boolean expression which will either be `true` or `false`
+- Here is another example:
+```javascript
+if(condition1) {
+    if(condition2) {
+        doSomething()
+    }
+}
+
+// Simplified ✅
+if(condition1 && condition2) doSomething()
+
+// Alternative option ✅ 
+if(!condition1) return 
+if(!condition2) return 
+doSomething()
+
+// Let's simplify it even further ✅😍🚀
+if(!condition || !condition2) return 
+doSomething()
+```
+*There are various ways to implement conditional logic – do your best to avoid nested conditionals*
+
+#### Verbose Comments
+```javascript
+❌❌❌
+// return list of customers
+function getCustomers() {
+    return customers
+}
+```
+- Do not make use of comments if the code is self-explanatory
+- Aim to write code that is so clean and self-explanatory that there ceases to be a need for any comments
+```javascript
+❌❌❌
+const gf = 10; // Goal Frequency
+```
+- Avoid using comments to clarify code that could have been written better
+
+#### Extremely long functions
+- Long functions are difficult to understand, alter and reuse
+- Always adhere to the Single Responsibility Principle which states that a class or function should do only one thing and do it well
+- Your functions should have a single responsibility and handle only a specific bit of logic
+- Adhering to this pattern ensures that you have reusable code and it makes your code easier to test
 
 ## Project folder Structure
 
 Here is the example of what the base project folder structure consists of. The example excludes the andoird, ios and common js files so that you can get a clean view of the structure.
 
 **Folder structure**
+* [components/](./src/components)
+    * [shared/](./src/components/shared)
+        * [Button.js](./src/components/shared/Button.js)
+        * [Container.js](./src/components/shared/Container.js)
+        * [CustomInput.js](./src/components/shared/CustomInput.js)
+        * [Spacer.js](./src/components/shared/Spacer.js)
+        * [StyledText.js](./src/components/shared/StyledText.js)
+* [config/](./src/config)
+    * [appConfig.js](./src/config/appConfig.js)
+* [constants/](./src/constants)
+    * [screenConstants.js](./src/constants/screenConstants.js)
+    * [testConstants.js](./src/constants/testConstants.js)
+    * [themeConstants.js](./src/constants/themeConstants.js)
+* [context/](./src/context)
+    * [ThemeContext.js](./src/context/ThemeContext.js)
+* [navigation/](./src/navigation)
+    * [AppTabs.js](./src/navigation/AppTabs.js)
+    * [AuthStackScreen.js](./src/navigation/AuthStackScreen.js)
+    * [HomeStackScreen.js](./src/navigation/HomeStackScreen.js)
+    * [SearchStackScreen.js](./src/navigation/SearchStackScreen.js)
+    * [ShopStackScreen.js](./src/navigation/ShopStackScreen.js)
+* [redux/](./src/redux)
+    * [auth/](./src/redux/auth)
+        * [authActions.js](./src/redux/auth/authActions.js)
+        * [authReducer.js](./src/redux/auth/authReducer.js)
+        * [authTypes.js](./src/redux/auth/authTypes.js)
+    * [counter/](./src/redux/counter)
+        * [counterActions.js](./src/redux/counter/counterActions.js)
+        * [counterReducer.js](./src/redux/counter/counterReducer.js)
+        * [counterTypes.js](./src/redux/counter/counterTypes.js)
+    * [configureStore.js](./src/redux/configureStore.js)
+    * [index.js](./src/redux/index.js)
+    * [rootReducer.js](./src/redux/rootReducer.js)
+    * [store.js](./src/redux/store.js)
+* [screens/](./src/screens)
+    * [auth/](./src/screens/auth)
+        * [LoginScreen.js](./src/screens/auth/LoginScreen.js)
+        * [SignUpScreen.js](./src/screens/auth/SignUpScreen.js)
+    * [home/](./src/screens/home)
+        * [HomeScreen.js](./src/screens/home/HomeScreen.js)
+        * [ProfileScreen.js](./src/screens/home/ProfileScreen.js)
+    * [search/](./src/screens/search)
+        * [ResultsScreen.js](./src/screens/search/ResultsScreen.js)
+        * [SearchScreen.js](./src/screens/search/SearchScreen.js)
+    * [shop/](./src/screens/shop)
+        * [ProductScreen.js](./src/screens/shop/ProductScreen.js)
+        * [ShopScreen.js](./src/screens/shop/ShopScreen.js)
+    * [splash/](./src/screens/splash)
+        * [SplashScreen.js](./src/screens/splash/SplashScreen.js)
+* [services/](./src/services)
+    * [EventManager.js](./src/services/EventManager.js)
+* [utils/](./src/utils)
+    * [SmartStyle.js](./src/utils/SmartStyle.js)
+    * [TestUtils.js](./src/utils/TestUtils.js)
+* [directoryList.md](./src/directoryList.md)
 
--**project**
--- App.js
--- index.js
--- ** src**
----- api
----- components
------- shared
----- config
----- context
----- hooks
----- navigation
----- redux
------- counter
--------- CounterActions.js
--------- CounterReducer.js
--------- CounterTypes.js
------- ConfigureStore.js
------- index.js
------- RootReducer.js
------- Store.js
----- screens
------- home
--------- HomeScreen.js
----- services
----- utils
--- ** styles**
----- genral
----- themes
------- Dark.js
------- Generic.js
------- Light.js
----- Theme.js
+
 
 ## Theme implementaion
 
