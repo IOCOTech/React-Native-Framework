@@ -13,11 +13,14 @@ import ThemeContext from '../../context/ThemeContext';
 // Constants
 import THEME from '../../constants/ThemeConstants';
 // redux imports
-import {connect} from 'react-redux';
+import {add, remove} from '../../redux';
+import {useSelector, useDispatch} from 'react-redux';
 
 const HomeScreen = ({navigation}) => {
   const {theme, switchTheme} = useContext(ThemeContext);
   const styles = localStyles(theme);
+  const counter = useSelector((state) => state.counter);
+  const dispatch = useDispatch();
 
   return (
     <Container
@@ -25,7 +28,6 @@ const HomeScreen = ({navigation}) => {
       flex={1}
       backgroundColor={theme.app.color.primary}>
       <ScrollView style={{flexGrow: 1}} showsVerticalScrollIndicator={false}>
-        <Spacer small />
         <Button title={'light theme'} action={() => switchTheme(THEME.LIGHT)} />
         <Spacer small />
         <Button
@@ -34,6 +36,21 @@ const HomeScreen = ({navigation}) => {
         />
         <Spacer small />
         <Button title={'dark theme'} action={() => switchTheme(THEME.DARK)} />
+        <Spacer medium />
+        <Container flexDirection={'row'} flex={1} alignItems={'center'}>
+          <Button title={'ADD'} action={() => dispatch(add())} />
+          <Spacer small />
+          <Button title={'REMOVE'} action={() => dispatch(remove())} />
+          <Container
+            flex={1}
+            flexDirection={'row'}
+            alignItems={'center'}
+            justifyContent={'center'}>
+            <StyledText f8 primary bold>
+              {counter.count}
+            </StyledText>
+          </Container>
+        </Container>
         <Spacer medium />
         <Text style={styles.lableStyle}>Font Family</Text>
         <Spacer small />
@@ -652,14 +669,4 @@ const localStyles = (theme) =>
     },
   });
 
-// Mapping the redux state to props
-const mapStateToProps = (state) => {
-  return {};
-};
-
-// Mapping the redux actions to props
-const mapDispatchToProps = (dispatch) => {
-  return {};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);
+export default HomeScreen;
