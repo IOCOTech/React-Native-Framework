@@ -370,7 +370,7 @@ Code pull requests are welcome for major changes, please open an issue first to 
 ### How to contribute
 1. #### Fork the IOCOTech/React-Native-Framework repository
 2. #### Clone your new fork locally
-`git clone git@github.com:<your username>/React-Native-Framework.git` (assumes you are cloning using SSH)
+`git clone git@github.com:<your username>/React-Native-Framework.git` (assumes you are cloning the repository using SSH)
 > ❗️***NOTE*** You need to clone the forked repository under your username into your local development environment
 > and not the original repository.
 3. #### Track the original repository as a remote of the fork
