@@ -618,7 +618,7 @@ for some use cases of the `StyledText` component.
 
 ```javascript
 <StyledText style={{fontSize: 18}} primary thin>
-    thin
+    Some text you want to style
 </StyledText>
 ```
 | Prop      | Prop Category |
