@@ -748,7 +748,7 @@ Code pull requests are welcome for major changes, please open an issue first to 
 > ❗️***NOTE*** You need to clone the forked repository under your username into your local development environment
 > and not the original repository.
 3. #### Track the original repository as a remote of the fork
-* Switch directories to your forked repository and run the following command: `git remote add --track master
+* Switch directories to your forked repository and run the following command: `git remote add --track main
   upstream git@github.com:IOCOTech/React-Native-Framework.git` followed by `git fetch upstream`
 4. #### Create a new branch for any changes you want to make
 * Run the following command `git checkout -b <your branch name> upstream/main`
