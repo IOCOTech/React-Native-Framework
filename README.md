@@ -362,6 +362,65 @@ for example if you made a box background primary then the text in that box shoul
 </View>
 ```
 
+## Styling API 
+This section will go over three fundamental styling components, their props and how to make use of them 🚀! These 
+components can be found under the [shared/](./src/components/shared) components folder.  
+
+### `StyledText`
+The `StyledText` component is a custom component that provides an abstraction layer over the react-native `Text` 
+component. It makes it easier for you to specify styling for any given text by simply passing in props to the 
+`StyledText` component. 
+
+The props that you pass in are broken down into four categories namely: `font size`, `color`, `font weight`, 
+`text alignment` and `text style`. Each of these categories have a range of options you can pass in as props. See below 
+for some use cases of the `StyledText` component. 
+
+```javascript
+<StyledText f9 primary medium>
+    Some text you want to style
+</StyledText>
+// The above code would style your text with font size 9, the primary colour and a medium font weight
+```
+> 💡 ***NOTE*** You are able to still make use of the `style` component in the `StyledText` component as you would in 
+> a normal `Text` component. (See illustration below 🚀) 
+
+```javascript
+<StyledText style={{fontSize: 18}} primary thin>
+    thin
+</StyledText>
+```
+| Prop      | Prop Category |
+| ----------- | ----------- |
+| `f0`      | Font Size       |
+| `f1`      | Font Size       |
+| `f2`      | Font Size       |
+| `f3`      | Font Size       |
+| `f4`      | Font Size       |
+| `f5`      | Font Size       |
+| `f6`      | Font Size       |
+| `f7`      | Font Size       |
+| `f8`      | Font Size       |
+| `f9`      | Font Size       |
+| `f10`      | Font Size       |
+| `success`   | Color        |
+| `warning`   | Color        |
+| `error`   | Color        |
+| `black`   | Color        |
+| `white`   | Color        |
+| `accent`   | Color        |
+| `grey`   | Color        |
+| `offWhite`   | Color        |
+| `secondary`   | Color        |
+| `primary`   | Color        |
+| `bold`   | Font Weight        |
+| `medium`   | Font Weight        |
+| `regular`   | Font Weight        |
+| `thin`   | Font Weight        |
+| `center`   | Alignment        |
+| `right`   | Alignment        |
+| `italic`   | Italic        |
+
+
 ## Contributing
 
 Contributing to this documentation is always appreciated so if you found something useful to add, create a pull 
@@ -383,7 +442,7 @@ Code pull requests are welcome for major changes, please open an issue first to 
 > to make.
 5. #### Make any changes you want to make
 6. #### Commit and push the changes
-* Instead of pushing to main, push to the branch you created in step for using the following command: `git push -u
+* Instead of pushing to main, push to the branch you created in step four using the following command: `git push -u
   origin <name of your branch>`
 7. #### Submit your pull request
 * At this point, you can go to your forked repository and under the 'pull requests tab', create a pull request for 
