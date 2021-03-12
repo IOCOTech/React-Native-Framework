@@ -386,7 +386,9 @@ Code pull requests are welcome for major changes, please open an issue first to 
 * Instead of pushing to main, push to the branch you created in step for using the following command: `git push -u
   origin <name of your branch>`
 7. #### Submit your pull request
-* At this point, you can go to your forked repository and create a pull request for one of the maintainers of the
+* At this point, you can go to your forked repository and under the 'pull requests tab', create a pull request for 
+  one of the 
+  maintainers of the
   project to approve
 > 💡***NOTE*** If you want to keep your local fork up to date with the latest changes as per the original repository,
 > run the following command `git pull upstream main`
