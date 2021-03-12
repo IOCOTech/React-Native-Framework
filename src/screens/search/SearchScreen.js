@@ -8,8 +8,6 @@ import Button from '../../components/shared/Button';
 import Spacer from '../../components/shared/Spacer';
 // Constants
 import SCREENS from '../../constants/ScreenConstants';
-// redux imports
-import {connect} from 'react-redux';
 // Context
 import ThemeContext from '../../context/ThemeContext';
 
@@ -50,14 +48,4 @@ const SearchScreen = ({navigation}) => {
 // This object is used to style your components
 const localStyles = (theme) => StyleSheet.create({});
 
-// Mapping the redux state to props
-const mapStateToProps = (state) => {
-  return {};
-};
-
-// Mapping the redux actions to props
-const mapDispatchToProps = (dispatch) => {
-  return {};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(SearchScreen);
+export default SearchScreen;

@@ -11,8 +11,6 @@ import CustomInput from '../../components/shared/CustomInput';
 import ThemeContext from '../../context/ThemeContext';
 // Constants
 import SCREENS from '../../constants/ScreenConstants';
-// redux imports
-import {connect} from 'react-redux';
 
 const LoginScreen = ({navigation}) => {
   const {theme} = useContext(ThemeContext);
@@ -83,14 +81,4 @@ const localStyles = (theme) =>
     },
   });
 
-// Mapping the redux state to props
-const mapStateToProps = (state) => {
-  return {};
-};
-
-// Mapping the redux actions to props
-const mapDispatchToProps = (dispatch) => {
-  return {};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);
+export default LoginScreen;

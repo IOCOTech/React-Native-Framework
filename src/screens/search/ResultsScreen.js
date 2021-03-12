@@ -4,8 +4,6 @@ import {StyleSheet} from 'react-native';
 // Custom component imports
 import Container from '../../components/shared/Container';
 import StyledText from '../../components/shared/StyledText';
-// redux imports
-import {connect} from 'react-redux';
 // Context
 import ThemeContext from '../../context/ThemeContext';
 
@@ -31,14 +29,4 @@ const ResultsScreen = ({navigation}) => {
 // This object is used to style your components
 const localStyles = (theme) => StyleSheet.create({});
 
-// Mapping the redux state to props
-const mapStateToProps = (state) => {
-  return {};
-};
-
-// Mapping the redux actions to props
-const mapDispatchToProps = (dispatch) => {
-  return {};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ResultsScreen);
+export default ResultsScreen;

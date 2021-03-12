@@ -10,10 +10,6 @@ import Spacer from '../../components/shared/Spacer';
 import ThemeContext from '../../context/ThemeContext';
 // Constants
 import SCREENS from '../../constants/ScreenConstants';
-// redux imports
-import {connect} from 'react-redux';
-// SmartStyle
-import SmartStyle from '../../utils/SmartStyle';
 
 const ShopScreen = ({navigation}) => {
   const {theme} = useContext(ThemeContext);
@@ -52,4 +48,4 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShopScreen);
+export default ShopScreen;

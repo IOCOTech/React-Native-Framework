@@ -17,10 +17,15 @@ import {add, remove} from '../../redux';
 import {useSelector, useDispatch} from 'react-redux';
 
 const HomeScreen = ({navigation}) => {
-  const {theme, switchTheme} = useContext(ThemeContext);
-  const styles = localStyles(theme);
-  const counter = useSelector((state) => state.counter);
+  // Use the useDispatch hook to dispatch redux actions
   const dispatch = useDispatch();
+  // Import the theme or switchTheme to make use of the theme object in your styles
+  const {theme, switchTheme} = useContext(ThemeContext);
+
+  const counter = useSelector((state) => state.counter);
+
+  // Init your styles object by passing in the theme
+  const styles = localStyles(theme);
 
   return (
     <Container
@@ -28,6 +33,9 @@ const HomeScreen = ({navigation}) => {
       flex={1}
       backgroundColor={theme.app.color.primary}>
       <ScrollView style={{flexGrow: 1}} showsVerticalScrollIndicator={false}>
+        <Spacer medium />
+        <Text style={styles.lableStyle}>Theme example</Text>
+        <Spacer medium />
         <Button title={'light theme'} action={() => switchTheme(THEME.LIGHT)} />
         <Spacer small />
         <Button
@@ -36,6 +44,8 @@ const HomeScreen = ({navigation}) => {
         />
         <Spacer small />
         <Button title={'dark theme'} action={() => switchTheme(THEME.DARK)} />
+        <Spacer medium />
+        <Text style={styles.lableStyle}>Redux example</Text>
         <Spacer medium />
         <Container flexDirection={'row'} flex={1} alignItems={'center'}>
           <Button title={'ADD'} action={() => dispatch(add())} />
@@ -46,58 +56,58 @@ const HomeScreen = ({navigation}) => {
             flexDirection={'row'}
             alignItems={'center'}
             justifyContent={'center'}>
-            <StyledText f8 primary bold>
+            <StyledText f10 primary bold>
               {counter.count}
             </StyledText>
           </Container>
         </Container>
-        <Spacer medium />
+        <Spacer large />
         <Text style={styles.lableStyle}>Font Family</Text>
         <Spacer small />
         <StyledText style={{fontSize: 18}} primary bold>
-          bold
+          bold (theme.font.family.bold)
         </StyledText>
         <StyledText style={{fontSize: 18}} primary medium>
-          medium
+          medium (theme.font.family.medium)
         </StyledText>
         <StyledText style={{fontSize: 18}} primary regular>
-          regular
+          regular (theme.font.family.regular)
         </StyledText>
         <StyledText style={{fontSize: 18}} primary thin>
-          thin
+          thin (theme.font.family.thin)
         </StyledText>
         <Spacer large />
         <Text style={styles.lableStyle}>Font Size</Text>
         <Spacer small />
         <StyledText f10 primary medium>
-          f10 Size ({theme.font.size.f10})
+          theme.font.size.f10
         </StyledText>
         <StyledText f9 primary medium>
-          f9 Size ({theme.font.size.f9})
+          theme.font.size.f9
         </StyledText>
         <StyledText f8 primary medium>
-          f8 Size ({theme.font.size.f8})
+          theme.font.size.f8
         </StyledText>
         <StyledText f7 primary medium>
-          f7 Size ({theme.font.size.f7})
+          theme.font.size.f7
         </StyledText>
         <StyledText f6 primary medium>
-          f6 Size ({theme.font.size.f6})
+          theme.font.size.f6
         </StyledText>
         <StyledText f5 primary medium>
-          f5 Size ({theme.font.size.f5})
+          theme.font.size.f5
         </StyledText>
         <StyledText f4 primary medium>
-          f4 Size ({theme.font.size.f4})
+          theme.font.size.f4
         </StyledText>
         <StyledText f3 primary medium>
-          f3 Size ({theme.font.size.f3})
+          theme.font.size.f3
         </StyledText>
         <StyledText f2 primary medium>
-          f2 Size ({theme.font.size.f2})
+          theme.font.size.f2
         </StyledText>
         <StyledText f1 primary medium>
-          f1 Size ({theme.font.size.f1})
+          theme.font.size.f1
         </StyledText>
         <Spacer large />
         <Text style={styles.lableStyle}>Font color</Text>
@@ -108,13 +118,13 @@ const HomeScreen = ({navigation}) => {
               style={{backgroundColor: theme.app.color.white, fontSize: 16}}
               primary
               medium>
-              primary ({theme.font.color.primary})
+              theme.font.color.primary
             </StyledText>
             <StyledText
               style={{backgroundColor: theme.app.color.white, fontSize: 16}}
               secondary
               medium>
-              secondary ({theme.font.color.secondary})
+              theme.font.color.secondary
             </StyledText>
             <StyledText
               style={{backgroundColor: theme.app.color.white, fontSize: 16}}

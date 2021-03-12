@@ -4,8 +4,6 @@ import {StyleSheet} from 'react-native';
 // Custom component imports
 import Container from '../../components/shared/Container';
 import StyledText from '../../components/shared/StyledText';
-// redux imports
-import {connect} from 'react-redux';
 // Context
 import ThemeContext from '../../context/ThemeContext';
 
@@ -41,4 +39,4 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUpScreen);
+export default SignUpScreen;
