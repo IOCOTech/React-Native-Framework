@@ -4,10 +4,6 @@ This repo is a great way to get started with a React Native project. React Nativ
 
 When using this project please make sure you follow the ways of work to ensure all derivative projects are aligned.
 
-**Table of Contents**
-
-[TOC]
-
 ## Installation
 
 1.  Ensure that you have node.js installed before starting =>
@@ -322,9 +318,9 @@ Here is the example of what the base project folder structure consists of. The e
 
 ## Theme implementaion
 
-The the theme implementation for this repo is flexible enough to change themes dynamicly in runtime, it accomplishes this by making use of a global theme file and state in the context api. Lets have a look at the different elements for you to be able to style components with the theme.
+The theme implementation for this repo is flexible enough to change themes dynamicly in runtime, it accomplishes this by making use of a global theme file and state in the context api. Lets have a look at the different elements for you to be able to style components with the theme.
 
-The first piece of the puszzle we will look at is the **Generic.js** file. This file is the root of a theme, more of these files can be created for different themes, it contains all the variables that will be used througout your application. The file returns an object that can be later used to style components in a dot fassion (Theme.app.color.primary).
+The first piece of the puszzle we will look at is the **Generic.js** file ( styles >> themes >> **Generic.js** ). This file is the root of a theme, more of these files can be created for different themes, it contains all the variables that will be used througout your application. The file returns an object that can be later used to style components in a dot fassion (Theme.app.color.primary).
 
 _Below is an condensed example of the file. The accual file contains mush more variables._
 
@@ -387,9 +383,9 @@ export default generic = {
 
 Looking at the **Generic.js** file we can see how the object is structured in such a way that it alligns to properties of an element for instants the key **app** is used for styling every mundain object in the app such as background colors. Where as the key **font** is used to specificly style text elements in the app. It is important to separate some of the elements like this so that when changing a theme all the separate elements can make use of its own variables.
 
-When setting up the theme it is important to use contrasting colors when it comes to the app, font styles (primary, scondary and acccent) and it should be used in such a way that primary font colors will ne readable on primary app background color.
+When setting up the theme it is important to use contrasting colors when it comes to the app, font styles (primary, scondary and acccent) and it should be used in such a way that primary font colors will be readable on primary app background color.
 
-for example if you made a box background primary then the text in that box should also be primary.
+for example if you have made a box background primary then the text in that box should also be primary.
 
 ```jsx
 <View style={{backgroundColor: theme.app.color.primary}}>
@@ -432,7 +428,7 @@ const Theme = (() => {
 export default Theme;
 ```
 
-The** Theme.js** file you can see how the different themes are hooked up to an object that gets returned when calling the **set** method. When adding a new theme all you need to do is, add the theme export to the imports and append it to the theme object in line 8.
+In the** Theme.js** file you can see how the different themes are hooked up to an object that gets returned when calling the **set** method. When adding a new theme all you need to do is, add the theme export to the imports and append it to the theme object in line 8.
 
 Your theme should now be available when setting up the theme state in your components.
 
@@ -444,25 +440,22 @@ Here is an example of a component without the theme.
 // React imports
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-
 const Comp = () => {
   return (
     // Component start
     <>
-      <View styles={styles.box}></View>
-      <View styles={{backgroundColor: '#FFFFFF'}}></View>
+      <View style={localStyles.box}></View>
+      <View style={{backgroundColor: '#FFFFFF'}}></View>
     </>
     // Component end
   );
 };
-
 // This object is used to style your components
 const localStyles = StyleSheet.create({
   box: {
     backgroundColor: '#FFFFFF',
   },
 });
-
 export default Comp;
 ```
 
@@ -518,7 +511,7 @@ const styles = localStyles(theme);
 
 The theme is used for styling any inline styles in you compoenent where as the styles referes to the created stylesheet on line 22, here we are passing the theme to the stylesheet to make use of the theme variables.
 
-The **ThemeContext** allows us to make use of the theme varaibles anywahere in the app. There are many ways to extract the variable into the components. We just provide a starting point to follow and make use of the theme with Context api. The **ThemeContext** also exposes a method to switch the theme dynamically by pointing to theme constants.
+The **ThemeContext** allows us to make use of the theme variables anywhere in the app. There are many ways to extract the variable into the components. We just provide a starting point to follow and make use of the theme with Context api. The **ThemeContext** also exposes a method to switch the theme dynamically by pointing to theme constants.
 Here is how that method looks like.
 
 ```javascript
@@ -547,12 +540,91 @@ export const ThemeProvider = ({children}) => {
 export default ThemeContext;
 ```
 
+#### Changing Themes
+
+To change between different themes, we introduce the **ThemeConstant** class, ( constants >> **ThemeConstant.js** ) , this class exports a THEME class that defines our three base themes, which allows us to make use of the theme variables anywhere in the app.
+
+Here is how that method looks like.
+
+```javascript
+// React imports
+import React, {useContext, useEffect} from 'react';
+import {View, StyleSheet} from 'react-native';
+// Context
+import ThemeContext from '../../context/ThemeContext';
+import ThemeConstants from '../../constants/ThemeConstants';
+
+const CompChangeTheme = () => {
+  const {theme, switchTheme} = useContext(ThemeContext);
+  const styles = localStyles(theme);
+
+  useEffect(() => {
+    switchTheme(ThemeConstants.DARK);
+    // switchTheme(ThemeConstants.GENERIC)
+    // switchTheme(ThemeConstants.LIGHT)
+  }, []);
+
+  return (
+    // Component start
+    <>
+      <View styles={styles.box}></View>
+      <View styles={{backgroundColor: ThemeConstants.DARK}}></View>
+    </>
+    // Component end
+  );
+};
+
+// This object is used to style your components
+const localStyles = (theme) =>
+  StyleSheet.create({
+    box: {
+      backgroundColor: theme.app.color.primary,
+    },
+  });
+
+export default CompChangeTheme;
+```
+
+On line 6, we import the ThemeConstants, which will give us access to all of our themes constants.
+On line 5, our ThemeContext allows us to access all function within that class and the main theme object.
+One function we are interested in and importing is the switchTheme found on line 9,
+the switchTheme function allows us to set and pass a ThemeConstant as a parameter, hence invoking the different themes.
+
+On line 13, we can see how we invoke the switchTheme function by calling switchTheme(ThemeConstants.DARK), that will initialise the app to the DARK theme, feel free to change between different base themes or create custom themes.
+
 We hope that you enjoy using the theme in the app. Please feel free to make suggestions on how to improve the theme system by following the contribution flow.
 
 ## Contributing
 
-Contributing to this documentation is always appreciated so if you found something useful to add, create a pull request for the readme file.
+Contributing to this documentation is always appreciated so if you found something useful to add, create a pull 
+request (see steps below illustrating how to make any contributions).
 Code pull requests are welcome for major changes, please open an issue first to discuss what you would like to change.
+
+### How to contribute
+1. #### Fork the IOCOTech/React-Native-Framework repository
+2. #### Clone your new fork locally
+`git clone git@github.com:<your username>/React-Native-Framework.git` (assumes you are cloning the repository using SSH)
+> ❗️***NOTE*** You need to clone the forked repository under your username into your local development environment
+> and not the original repository.
+3. #### Track the original repository as a remote of the fork
+* Switch directories to your forked repository and run the following command: `git remote add --track master
+  upstream git@github.com:IOCOTech/React-Native-Framework.git` followed by `git fetch upstream`
+4. #### Create a new branch for any changes you want to make
+* Run the following command `git checkout -b <your branch name> upstream/main`
+> 💡***NOTE*** Instead of pushing directly to the main branch, please checkout a new branch for each change you want
+> to make.
+5. #### Make any changes you want to make
+6. #### Commit and push the changes
+* Instead of pushing to main, push to the branch you created in step for using the following command: `git push -u
+  origin <name of your branch>`
+7. #### Submit your pull request
+* At this point, you can go to your forked repository and under the 'pull requests tab', create a pull request for 
+  one of the 
+  maintainers of the
+  project to approve
+> 💡***NOTE*** If you want to keep your local fork up to date with the latest changes as per the original repository,
+> run the following command `git pull upstream main`
+
 
 ## Questions and Answers
 

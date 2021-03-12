@@ -3,8 +3,6 @@ import React, {useContext} from 'react';
 import {StyleSheet, Image} from 'react-native';
 // Custom component imports
 import Container from '../../components/shared/Container';
-// redux imports
-import {connect} from 'react-redux';
 // Context
 import ThemeContext from '../../context/ThemeContext';
 
@@ -36,14 +34,4 @@ const localStyles = (theme) =>
     },
   });
 
-// Mapping the redux state to props
-const mapStateToProps = (state) => {
-  return {};
-};
-
-// Mapping the redux actions to props
-const mapDispatchToProps = (dispatch) => {
-  return {};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(SplashScreen);
+export default SplashScreen;
