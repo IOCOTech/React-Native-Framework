@@ -364,7 +364,8 @@ for example if you made a box background primary then the text in that box shoul
 
 ## Contributing
 
-Contributing to this documentation is always appreciated so if you found something useful to add, create a pull request for the readme file.
+Contributing to this documentation is always appreciated so if you found something useful to add, create a pull 
+request (see steps below illustrating how to make any contributions).
 Code pull requests are welcome for major changes, please open an issue first to discuss what you would like to change.
 
 ### How to contribute
@@ -385,7 +386,7 @@ Code pull requests are welcome for major changes, please open an issue first to 
 * Instead of pushing to main, push to the branch you created in step for using the following command: `git push -u
   origin <name of your branch>`
 7. #### Submit your pull request
-* At this point, you can go to the original repository and create a pull request for one of the maintainers of the
+* At this point, you can go to your forked repository and create a pull request for one of the maintainers of the
   project to approve
 > 💡***NOTE*** If you want to keep your local fork up to date with the latest changes as per the original repository,
 > run the following command `git pull upstream main`
