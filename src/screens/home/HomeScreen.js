@@ -115,78 +115,82 @@ const HomeScreen = ({navigation}) => {
         <Container flexDirection={'row'} justifyContent={'space-between'}>
           <Container flex={1}>
             <StyledText
-              style={{backgroundColor: theme.app.color.white, fontSize: 16}}
+              style={{backgroundColor: theme.app.color.white, fontSize: 12}}
               primary
               medium>
               theme.font.color.primary
             </StyledText>
             <StyledText
-              style={{backgroundColor: theme.app.color.white, fontSize: 16}}
+              style={{backgroundColor: theme.app.color.white, fontSize: 12}}
               secondary
               medium>
               theme.font.color.secondary
             </StyledText>
             <StyledText
-              style={{backgroundColor: theme.app.color.white, fontSize: 16}}
+              style={{backgroundColor: theme.app.color.white, fontSize: 12}}
               grey
               medium>
-              grey ({theme.font.color.grey})
+              theme.font.color.grey
             </StyledText>
             <StyledText
-              style={{backgroundColor: theme.app.color.white, fontSize: 16}}
+              style={{backgroundColor: theme.app.color.white, fontSize: 12}}
               accent
               medium>
-              accent ({theme.font.color.accent})
+              theme.font.color.accent
             </StyledText>
             <StyledText
-              style={{backgroundColor: theme.app.color.accent, fontSize: 16}}
+              style={{backgroundColor: theme.app.color.accent, fontSize: 12}}
               offWhite
               medium>
-              offWhite ({theme.font.color.offWhite})
+              theme.font.color.offWhite
             </StyledText>
           </Container>
           <Spacer medium />
           <Container flex={1}>
             <StyledText
-              style={{backgroundColor: theme.app.color.accent, fontSize: 16}}
+              style={{backgroundColor: theme.app.color.accent, fontSize: 12}}
               white
               medium>
-              white ({theme.font.color.white})
+              theme.font.color.white
             </StyledText>
             <StyledText
-              style={{backgroundColor: theme.app.color.white, fontSize: 16}}
+              style={{backgroundColor: theme.app.color.white, fontSize: 12}}
               black
               medium>
-              black ({theme.font.color.black})
+              theme.font.color.black
             </StyledText>
             <StyledText
-              style={{backgroundColor: theme.app.color.white, fontSize: 16}}
+              style={{backgroundColor: theme.app.color.white, fontSize: 12}}
               error
               medium>
-              error ({theme.font.color.error})
+              theme.font.color.error
             </StyledText>
             <StyledText
-              style={{backgroundColor: theme.app.color.white, fontSize: 16}}
+              style={{backgroundColor: theme.app.color.white, fontSize: 12}}
               success
               medium>
-              success ({theme.font.color.success})
+              theme.font.color.success
             </StyledText>
             <StyledText
-              style={{backgroundColor: theme.app.color.white, fontSize: 16}}
+              style={{backgroundColor: theme.app.color.white, fontSize: 12}}
               warning
               medium>
-              warning ({theme.font.color.warning})
+              theme.font.color.warning
             </StyledText>
           </Container>
         </Container>
         <Spacer large />
-        <Text style={styles.lableStyle}>StyledText component use</Text>
+        <Text style={styles.lableStyle}>StyledText component usage</Text>
         <Spacer small />
-        <StyledText f6 success bold>
-          f6 success bold
+        <StyledText f4 primary>
+          {`
+          <StyledText f6 success bold>
+            f6 success bold
+          </StyledText>
+          `}
         </StyledText>
         <Spacer large />
-        <Text style={styles.lableStyle}>Icon Size</Text>
+        <Text style={styles.lableStyle}>Icon Size (theme.icon.size.f1)</Text>
         <Spacer small />
         <Container
           flexDirection={'row'}
@@ -376,7 +380,9 @@ const HomeScreen = ({navigation}) => {
           alignItems={'center'}
           justifyContent={'center'}
           marginTop={5}>
-          <Text style={{fontSize: 18, color: 'white'}}>primary</Text>
+          <Text style={{fontSize: 18, color: 'white'}}>
+            theme.app.color.primary
+          </Text>
         </Container>
         <Container
           containerStyles={{
@@ -388,7 +394,9 @@ const HomeScreen = ({navigation}) => {
           alignItems={'center'}
           justifyContent={'center'}
           marginTop={5}>
-          <Text style={{fontSize: 18, color: 'white'}}>secondary</Text>
+          <Text style={{fontSize: 18, color: 'white'}}>
+            theme.app.color.secondary
+          </Text>
         </Container>
         <Container
           containerStyles={{
@@ -400,7 +408,9 @@ const HomeScreen = ({navigation}) => {
           alignItems={'center'}
           justifyContent={'center'}
           marginTop={5}>
-          <Text style={{fontSize: 18, color: 'black'}}>accent</Text>
+          <Text style={{fontSize: 18, color: 'black'}}>
+            theme.app.color.accent
+          </Text>
         </Container>
         <Container
           containerStyles={{
@@ -412,7 +422,9 @@ const HomeScreen = ({navigation}) => {
           alignItems={'center'}
           justifyContent={'center'}
           marginTop={5}>
-          <Text style={{fontSize: 18, color: 'black'}}>offWhite</Text>
+          <Text style={{fontSize: 18, color: 'black'}}>
+            theme.app.color.offWhite
+          </Text>
         </Container>
         <Container
           containerStyles={{
@@ -424,7 +436,9 @@ const HomeScreen = ({navigation}) => {
           alignItems={'center'}
           justifyContent={'center'}
           marginTop={5}>
-          <Text style={{fontSize: 18, color: 'black'}}>white</Text>
+          <Text style={{fontSize: 18, color: 'black'}}>
+            theme.app.color.white
+          </Text>
         </Container>
         <Container
           containerStyles={{
@@ -436,7 +450,9 @@ const HomeScreen = ({navigation}) => {
           alignItems={'center'}
           justifyContent={'center'}
           marginTop={5}>
-          <Text style={{fontSize: 18, color: 'white'}}>black</Text>
+          <Text style={{fontSize: 18, color: 'white'}}>
+            theme.app.color.black
+          </Text>
         </Container>
         <Container
           containerStyles={{
@@ -448,7 +464,9 @@ const HomeScreen = ({navigation}) => {
           alignItems={'center'}
           justifyContent={'center'}
           marginTop={5}>
-          <Text style={{fontSize: 18, color: 'white'}}>grey</Text>
+          <Text style={{fontSize: 18, color: 'white'}}>
+            theme.app.color.grey
+          </Text>
         </Container>
         <Container
           containerStyles={{
@@ -460,7 +478,9 @@ const HomeScreen = ({navigation}) => {
           alignItems={'center'}
           justifyContent={'center'}
           marginTop={5}>
-          <Text style={{fontSize: 18, color: 'black'}}>success</Text>
+          <Text style={{fontSize: 18, color: 'black'}}>
+            theme.app.color.success
+          </Text>
         </Container>
         <Container
           containerStyles={{
@@ -472,7 +492,9 @@ const HomeScreen = ({navigation}) => {
           alignItems={'center'}
           justifyContent={'center'}
           marginTop={5}>
-          <Text style={{fontSize: 18, color: 'white'}}>warning</Text>
+          <Text style={{fontSize: 18, color: 'white'}}>
+            theme.app.color.warning
+          </Text>
         </Container>
         <Container
           containerStyles={{
@@ -484,7 +506,9 @@ const HomeScreen = ({navigation}) => {
           alignItems={'center'}
           justifyContent={'center'}
           marginTop={5}>
-          <Text style={{fontSize: 18, color: 'white'}}>error</Text>
+          <Text style={{fontSize: 18, color: 'white'}}>
+            theme.app.color.error
+          </Text>
         </Container>
         <Spacer large />
         <Text style={styles.lableStyle}>
