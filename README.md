@@ -596,8 +596,35 @@ We hope that you enjoy using the theme in the app. Please feel free to make sugg
 
 ## Contributing
 
-Contributing to this documentation is always appreciated so if you found something useful to add, create a pull request for the readme file.
+Contributing to this documentation is always appreciated so if you found something useful to add, create a pull 
+request (see steps below illustrating how to make any contributions).
 Code pull requests are welcome for major changes, please open an issue first to discuss what you would like to change.
+
+### How to contribute
+1. #### Fork the IOCOTech/React-Native-Framework repository
+2. #### Clone your new fork locally
+`git clone git@github.com:<your username>/React-Native-Framework.git` (assumes you are cloning the repository using SSH)
+> ❗️***NOTE*** You need to clone the forked repository under your username into your local development environment
+> and not the original repository.
+3. #### Track the original repository as a remote of the fork
+* Switch directories to your forked repository and run the following command: `git remote add --track master
+  upstream git@github.com:IOCOTech/React-Native-Framework.git` followed by `git fetch upstream`
+4. #### Create a new branch for any changes you want to make
+* Run the following command `git checkout -b <your branch name> upstream/main`
+> 💡***NOTE*** Instead of pushing directly to the main branch, please checkout a new branch for each change you want
+> to make.
+5. #### Make any changes you want to make
+6. #### Commit and push the changes
+* Instead of pushing to main, push to the branch you created in step for using the following command: `git push -u
+  origin <name of your branch>`
+7. #### Submit your pull request
+* At this point, you can go to your forked repository and under the 'pull requests tab', create a pull request for 
+  one of the 
+  maintainers of the
+  project to approve
+> 💡***NOTE*** If you want to keep your local fork up to date with the latest changes as per the original repository,
+> run the following command `git pull upstream main`
+
 
 ## Questions and Answers
 
