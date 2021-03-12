@@ -418,7 +418,89 @@ for some use cases of the `StyledText` component.
 | `thin`   | Font Weight        |
 | `center`   | Alignment        |
 | `right`   | Alignment        |
-| `italic`   | Italic        |
+| `italic`   | Font Style        |
+
+### `Spacer`
+The `Spacer` component can be used to add space between elements whether those elements are displayed horizontally 
+or vertically. See some examples below. 
+
+```javascript
+<SomeComponent/>
+<Spacer large/>
+<AnotherComponent/>
+// The above would add a large spacing between SomeComponent and AnotherComponent
+```
+#### Spacer props
+| Prop      | 
+| ----------- |
+| `xxsmall`      | 
+| `xsmall`      | 
+| `small`      | 
+| `medium`      | 
+| `large`      | 
+| `xlarge`      | 
+| `xxlarge`      | 
+
+### `Container`
+The `Container` component is a custom component that serves as an abstraction layer ontop of the react-native `View` 
+component. What the `Container` component enables you to do is pass a style property directly as a prop instead of 
+passing it as a property on the style prop as you would with the `View` component. Let's see how we can make use of 
+this custom component and how it differs from the traditional `View` component implementation. 
+
+```javascript
+<Container
+  paddingHorizontal={theme.spacing.f4}
+  flex={1}
+  backgroundColor={theme.app.color.primary}
+>
+    Some stuff you want to wrap inside of a container
+</Container>
+```
+> ❗️***NOTE*** The above implementation uses abstractions within the framework like `theme.spacing.f4` instead of 
+> hard coding some values. You could still specify a hard coded value for one of the props on the `Container` 
+> component. 
+
+Now what would the above implementation look like if you were making use of a normal `View`? 
+
+```javascript
+<View
+  style={{
+      paddingHorizontal: theme.spacing.f4, 
+      flex: 1, 
+      backgroundColor: theme.app.color.primary
+  }}
+>
+    Some stuff you want to wrap inside of a view
+</View>
+```
+
+Using the `Container` component results in code that has a more declarative approach and a cleaner overall syntax. 
+You also do not need to worry about possibly spelling some of those inline properties in the style object 
+incorrectly. It also removes the need for declaring a stylesheet in every component where you make use of a view. 
+
+#### Container props
+| Prop      | Prop Category |
+| ----------- | ----------- |
+| `marginVertical`      | Margin       |
+| `marginHorizontal`      | Margin       |
+| `marginTop`      | Margin       |
+| `marginBottom`      | Margin       |
+| `marginLeft`      | Margin       |
+| `marginRight`      | Margin       |
+| `paddingVertical`      | Padding       |
+| `paddingHorizontal`      | Padding       |
+| `paddingTop`      | Padding       |
+| `paddingBottom`      | Padding       |
+| `paddingLeft`      | Padding       |
+| `paddingRight`      | Padding       |
+| `backgroundColor`      | Background       |
+| `flex`      | Flex       |
+| `justifyContent`      | Flex       |
+| `alignItems`      | Flex       |
+| `flexDirection`      | Flex       |
+| `height`      | Size       |
+| `width`      | Size       |
+| `overflow`      | Overflow       |
 
 
 ## Contributing
