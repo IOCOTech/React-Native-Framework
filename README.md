@@ -594,6 +594,147 @@ On line 13, we can see how we invoke the switchTheme function by calling switchT
 
 We hope that you enjoy using the theme in the app. Please feel free to make suggestions on how to improve the theme system by following the contribution flow.
 
+## Styling API
+This section will go over three fundamental styling components, their props and how to make use of them 🚀! These
+components can be found under the [shared/](./src/components/shared) components folder.
+
+### `StyledText`
+The `StyledText` component is a custom component that provides an abstraction layer over the react-native `Text`
+component. It makes it easier for you to specify styling for any given text by simply passing in props to the
+`StyledText` component.
+
+The props that you pass in are broken down into four categories namely: `font size`, `color`, `font weight`,
+`text alignment` and `text style`. Each of these categories have a range of options you can pass in as props. See below
+for some use cases of the `StyledText` component.
+
+```javascript
+<StyledText f9 primary medium>
+    Some text you want to style
+</StyledText>
+// The above code would style your text with font size 9, the primary colour and a medium font weight
+```
+> 💡 ***NOTE*** You are able to still make use of the `style` component in the `StyledText` component as you would in
+> a normal `Text` component. (See illustration below 🚀)
+
+```javascript
+<StyledText style={{fontSize: 18}} primary thin>
+    thin
+</StyledText>
+```
+| Prop      | Prop Category |
+| ----------- | ----------- |
+| `f0`      | Font Size       |
+| `f1`      | Font Size       |
+| `f2`      | Font Size       |
+| `f3`      | Font Size       |
+| `f4`      | Font Size       |
+| `f5`      | Font Size       |
+| `f6`      | Font Size       |
+| `f7`      | Font Size       |
+| `f8`      | Font Size       |
+| `f9`      | Font Size       |
+| `f10`      | Font Size       |
+| `success`   | Color        |
+| `warning`   | Color        |
+| `error`   | Color        |
+| `black`   | Color        |
+| `white`   | Color        |
+| `accent`   | Color        |
+| `grey`   | Color        |
+| `offWhite`   | Color        |
+| `secondary`   | Color        |
+| `primary`   | Color        |
+| `bold`   | Font Weight        |
+| `medium`   | Font Weight        |
+| `regular`   | Font Weight        |
+| `thin`   | Font Weight        |
+| `center`   | Alignment        |
+| `right`   | Alignment        |
+| `italic`   | Font Style        |
+
+### `Spacer`
+The `Spacer` component can be used to add space between elements whether those elements are displayed horizontally
+or vertically. See some examples below.
+
+```javascript
+<SomeComponent/>
+<Spacer large/>
+<AnotherComponent/>
+// The above would add a large spacing between SomeComponent and AnotherComponent
+```
+#### Spacer props
+| Prop      | 
+| ----------- |
+| `xxsmall`      | 
+| `xsmall`      | 
+| `small`      | 
+| `medium`      | 
+| `large`      | 
+| `xlarge`      | 
+| `xxlarge`      | 
+
+### `Container`
+The `Container` component is a custom component that serves as an abstraction layer ontop of the react-native `View`
+component. What the `Container` component enables you to do is pass a style property directly as a prop instead of
+passing it as a property on the style prop as you would with the `View` component. Let's see how we can make use of
+this custom component and how it differs from the traditional `View` component implementation.
+
+```javascript
+<Container
+  paddingHorizontal={theme.spacing.f4}
+  flex={1}
+  backgroundColor={theme.app.color.primary}
+>
+    Some stuff you want to wrap inside of a container
+</Container>
+```
+> ❗️***NOTE*** The above implementation uses abstractions within the framework like `theme.spacing.f4` instead of
+> hard coding some values. You could still specify a hard coded value for one of the props on the `Container`
+> component.
+
+Now what would the above implementation look like if you were making use of a normal `View`?
+
+```javascript
+<View
+  style={{
+      paddingHorizontal: theme.spacing.f4, 
+      flex: 1, 
+      backgroundColor: theme.app.color.primary
+  }}
+>
+    Some stuff you want to wrap inside of a view
+</View>
+```
+
+Using the `Container` component results in code that has a more declarative approach and a cleaner overall syntax.
+You also do not need to worry about possibly spelling some of those inline properties in the style object
+incorrectly. It also removes the need for declaring a stylesheet in every component where you make use of a view.
+
+#### Container props
+| Prop      | Prop Category |
+| ----------- | ----------- |
+| `marginVertical`      | Margin       |
+| `marginHorizontal`      | Margin       |
+| `marginTop`      | Margin       |
+| `marginBottom`      | Margin       |
+| `marginLeft`      | Margin       |
+| `marginRight`      | Margin       |
+| `paddingVertical`      | Padding       |
+| `paddingHorizontal`      | Padding       |
+| `paddingTop`      | Padding       |
+| `paddingBottom`      | Padding       |
+| `paddingLeft`      | Padding       |
+| `paddingRight`      | Padding       |
+| `backgroundColor`      | Background       |
+| `flex`      | Flex       |
+| `justifyContent`      | Flex       |
+| `alignItems`      | Flex       |
+| `flexDirection`      | Flex       |
+| `height`      | Size       |
+| `width`      | Size       |
+| `overflow`      | Overflow       |
+
+
 ## Contributing
 
 Contributing to this documentation is always appreciated so if you found something useful to add, create a pull 
