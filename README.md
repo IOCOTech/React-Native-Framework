@@ -256,7 +256,7 @@ const gf = 10; // Goal Frequency
 
 ## Project folder Structure
 
-Here is the example of what the base project folder structure consists of. The example excludes the andoird, ios and common js files so that you can get a clean view of the structure.
+Here is the example of what the base project folder structure consists of. The example excludes the android, ios and common js files so that you can get a clean view of the structure.
 
 **Folder structure**
 
